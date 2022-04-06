@@ -27,8 +27,13 @@ BODY{BACKGROUND-COLOR:LIGHTYELLOW;}
 					</tr>
 					<TR>
 						<TD >Name:</TD>
-						<TD ><INPUT TYPE="TEXT" NAME="FirstName" required> </TD>
-						<TD ><INPUT TYPE="TEXT" NAME="LastName"> </TD>
+						<TD ><INPUT TYPE="TEXT" NAME="Firstname"  placeholder="Firstname"required> </TD>
+						<TD ><INPUT TYPE="TEXT" NAME="Lastname" placeholder="Lastname"> </TD>
+					</tr>
+					<TR>
+						<TD >UserName:</TD>
+						<TD ><INPUT TYPE="TEXT" NAME="Username" placeholder="Username" required> </TD>
+
 					</tr>
 					<TR>
 						<TD >DOB:</TD>
@@ -37,7 +42,7 @@ BODY{BACKGROUND-COLOR:LIGHTYELLOW;}
 					</tr>
 					<TR>
 						<TD >Mobile No.:</TD>
-						<TD colspan="2"><INPUT TYPE="tel" NAME="Mob" required></TD>
+						<TD colspan="2"><INPUT TYPE="number" NAME="Mob" required></TD>
 						
 					</tr>
 					<TR>
@@ -71,31 +76,72 @@ BODY{BACKGROUND-COLOR:LIGHTYELLOW;}
 
 if(isset($_POST['submit']))
 {
-$f_name = $_POST['FirstName'];
-$l_name = $_POST['LastName'];
-$dob = $_POST['dob'];
-$mobile_no = $_POST['Mob'];
-$email = $_POST['EmailId'];
-$password = $_POST['password'];
-$conpassword = $_POST['conpassword'];
+	//getting all the inputs
+	$f_name = $_POST['Firstname'];
+	$l_name = $_POST['Lastname'];
+	$dob = $_POST['dob'];
+	$mobile_no = $_POST['Mob'];
+	$email = $_POST['EmailId'];
+	$password = $_POST['password'];
+	$conpassword = $_POST['conpassword'];
+	$username = $_POST['Username'];
 
-//$user_id = 'UR124554';
 
-	if ($password == $conpassword){
+	$Data_validity = TRUE;
 
-		$query = "INSERT INTO USER_INFO VALUES('$password', '$f_name', '$l_name', '$dob', '$mobile_no', '$email')";
-		$data = mysqli_query($conn, $query);
+	//Query to get existing data
+	$query = "SELECT * FROM USER_INFO";
+	$data = mysqli_query($conn, $query);
 
-		if ($data){
-			echo 'Data Stored';
+	//Check if any data exists
+	if (mysqli_num_rows($data) != 0){
+		//Check for Duplicate entries
+		while($result = mysqli_fetch_assoc($data)){
+
+			if($result['User_ID'] == $username){
+				$Data_validity = FALSE;
+				$error_message = 'Username already exists';
+				break;
+			}
+			elseif($result['Mobile_Number'] == $mobile_no){
+				$Data_validity = FALSE;
+				$error_message = 'Mobile number already exists';
+				break;
+			}
+			elseif($result['Email'] == $email){
+				$Data_validity = FALSE;
+				$error_message = 'Email already in use';
+				break;
+			}
+
 		}
+	}
 
+	//Procide if no duplicates found
+	if ($Data_validity){
+
+		//Check if password matches confirm password
+		if($password == $conpassword){
+
+			//Insert into database
+			$query = "INSERT INTO USER_INFO VALUES('$username', '$f_name', '$l_name', '$dob', '$mobile_no', '$email')";
+			$data = mysqli_query($conn, $query);
+
+			//Check if data stored or not
+			if ($data){
+				echo '<script>alert("Data stored")</script>';
+			}
+
+			else{
+				echo 'Connection failed'.mysqli_connect_error();
+			}
+		}
 		else{
-			echo 'Connection failed'.mysqli_connect_error();
+			echo '<script>alert("Passeord mismatch")</script>';
 		}
 	}
 	else{
-		echo "password missmatch";
+		echo "<script>alert('$error_message')</script>";
 	}
 }
 
