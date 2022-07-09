@@ -1,148 +1,99 @@
-<?php
-include ("connection.php")
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
 
 
+    <h1>Complete the form below to register yourself</h1>
+    <form action="" method="POST">
+        <label for="fname">First Name:</label>
+        <input type="text" name="fname" id="fname" required>
+<br>
+<br>
+        <label for="mname">Middle Name</label>
+        <input type="text" name="mname" id="mname">
+<br>
+<br>
+        <label for="lname">Last Name</label>
+        <input type="text" name="lname" id="lname">
+<br>
+<br>
+        <label for="uname">User Name:</label>
+        <input type="text" name="uname" id="uname" required>
+<br>
+<br>
+        <label for="dob">DOB:</label>
+        <input type="date" name="dob" id="dob" required>
+<br>
+<br>
+        <label for="phonenumber">Phone Number</label>
+        <input type="number" name="phonenumber" id="phonenumber" required>
+<br>
+<br>
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+<br>
+<br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>   
+<br>
+<br>
+        <label for="cpassword">Confirm Password</label>
+        <input type="password" name="cpassword" id="cpassword" required>
+<br>
+<br>        
+        <button type="reset">Clear</button><button type="submit">Register</button>
+    </form>
 
-<HTML>
-<HEAD>
-<TITLE>Register</TITLE>
-<STYLE TYPE="TEXT/CSS">
-BODY{BACKGROUND-COLOR:LIGHTYELLOW;}
-</STYLE>
-</HEAD>
-<BODY> 
-	<H1> 
-		<u> GOVERNMENT OFFICIAL </u> </H1>
-		</br></br></br>
-		<FORM action='' method='post'>
-			<fieldset>
-				<legend>
-					<H2>Register</H2>
-				</legend>
-				<TABLE ALIGN="CENTER">
-					<TR>
-						<TD colspan="3" ><H3>Create Your Account.It Will Take Only Few Minutes..</H3></TD>
-						
-					</tr>
-					<TR>
-						<TD >Name:</TD>
-						<TD ><INPUT TYPE="TEXT" NAME="Firstname"  placeholder="Firstname"required> </TD>
-						<TD ><INPUT TYPE="TEXT" NAME="Lastname" placeholder="Lastname"> </TD>
-					</tr>
-					<TR>
-						<TD >UserName:</TD>
-						<TD ><INPUT TYPE="TEXT" NAME="Username" placeholder="Username" required> </TD>
 
-					</tr>
-					<TR>
-						<TD >DOB:</TD>
-						<TD colspan="2"><INPUT TYPE="date"  NAME="dob" required></TD>
-						
-					</tr>
-					<TR>
-						<TD >Mobile No.:</TD>
-						<TD colspan="2"><INPUT TYPE="number" NAME="Mob" required></TD>
-						
-					</tr>
-					<TR>
-						<TD >Email:</TD>
-						<TD ><INPUT TYPE="email" NAME="EmailId"></TD>
-						
-					</tr>
-					<TR>
-						<TD>Password:</TD>
-						<TD><INPUT TYPE="password" INPUT="password" name="password" required></TD>
-						
-					</tr>
-					<TR>
-						<TD>Confirm Password:</TD>
-						<TD><INPUT TYPE="password" INPUT="password" name="conpassword" required></TD>
-						
-					</tr>
-				</TABLE>		
-
-				<INPUT TYPE="Submit" VALUE="SUBMIT" name="submit">&nbsp;&nbsp;&nbsp;
-				<INPUT TYPE="RESET"  VALUE="RESET">&nbsp;&nbsp;&nbsp;
-			</fieldset>
-		</FORM>
-					</br>
-			<A HREF="display.php?$test=[1245,1236]" > OUR WEBSITE TO LOOK </A>
-</BODY>
-</HTML>
-
+</body>
+</html>
 
 <?php
+        include "partials/_connection.php";
 
-if(isset($_POST['submit']))
-{
-	//getting all the inputs
-	$f_name = $_POST['Firstname'];
-	$l_name = $_POST['Lastname'];
-	$dob = $_POST['dob'];
-	$mobile_no = $_POST['Mob'];
-	$email = $_POST['EmailId'];
-	$password = $_POST['password'];
-	$conpassword = $_POST['conpassword'];
-	$username = $_POST['Username'];
+        function generateRandomString($length = 10) {
+                $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                $charactersLength = strlen($characters);
+                $randomString = '';
+                for ($i = 0; $i < $length; $i++) {
+                    $randomString .= $characters[rand(0, $charactersLength - 1)];
+                }
+                return $randomString;
+            }
 
+        if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
-	$Data_validity = TRUE;
+			// echo "<script>alert('POST method called')</script>";
 
-	//Query to get existing data
-	$query = "SELECT * FROM USER_INFO";
-	$data = mysqli_query($conn, $query);
+			if ($_POST["password"] == $_POST["cpassword"]){
+					$username = $_POST["uname"];
+					$firstname = $_POST["fname"];
+					$middlename = $_POST["mname"];
+					$lastname = $_POST["lname"];
+					$dob = $_POST["dob"];
+					$phonenumber = $_POST["phonenumber"];
+					$email = $_POST["email"];
+					$password = $_POST["password"];
+					$salt = generateRandomString();
 
-	//Check if any data exists
-	if (mysqli_num_rows($data) != 0){
-		//Check for Duplicate entries
-		while($result = mysqli_fetch_assoc($data)){
+					$passwordhash = password_hash($password.$salt, PASSWORD_DEFAULT);
 
-			if($result['User_ID'] == $username){
-				$Data_validity = FALSE;
-				$error_message = 'Username already exists';
-				break;
-			}
-			elseif($result['Mobile_Number'] == $mobile_no){
-				$Data_validity = FALSE;
-				$error_message = 'Mobile number already exists';
-				break;
-			}
-			elseif($result['Email'] == $email){
-				$Data_validity = FALSE;
-				$error_message = 'Email already in use';
-				break;
-			}
+					$query = "INSERT INTO USERDATA VALUES('$username', '$firstname', '$middlename', '$lastname', '$dob', '$phonenumber', '$email')";
 
-		}
-	}
+					$result = mysqli_query($conn, $query);
 
-	//Procide if no duplicates found
-	if ($Data_validity){
+					$query = "INSERT INTO LOGINDATA VALUES('$username', '$salt', '$passwordhash', 'user')";
 
-		//Check if password matches confirm password
-		if($password == $conpassword){
+					$result = mysqli_query($conn, $query);
 
-			//Insert into database
-			$query = "INSERT INTO USER_INFO VALUES('$username', '$f_name', '$l_name', '$dob', '$mobile_no', '$email')";
-			$data = mysqli_query($conn, $query);
-
-			//Check if data stored or not
-			if ($data){
-				echo '<script>alert("Data stored")</script>';
-			}
-
-			else{
-				echo 'Connection failed'.mysqli_connect_error();
-			}
-		}
-		else{
-			echo '<script>alert("Passeord mismatch")</script>';
-		}
-	}
-	else{
-		echo "<script>alert('$error_message')</script>";
-	}
-}
-
+					// echo"$result";
+					
+                }
+        }
 ?>
