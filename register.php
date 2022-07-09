@@ -84,6 +84,9 @@
 
 					$passwordhash = password_hash($password.$salt, PASSWORD_DEFAULT);
 
+                                        echo $password.$salt.'<br>';
+                                        echo $passwordhash;
+
 					$query = "INSERT INTO USERDATA VALUES('$username', '$firstname', '$middlename', '$lastname', '$dob', '$phonenumber', '$email')";
 
 					$result = mysqli_query($conn, $query);
@@ -94,7 +97,7 @@
 
 					// echo "<script>alert('You have been register. Now login to continue.')</script>";
 
-                                        echo "<script>if(confirm('Your Record Sucessfully Inserted. Now Login')){document.location.href='login.php'};</script>";
+                                        // echo "<script>if(confirm('Your Record Sucessfully Inserted. Now Login')){document.location.href='login.php'};</script>";
 					
                 }
         }
