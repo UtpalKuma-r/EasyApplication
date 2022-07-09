@@ -92,7 +92,9 @@
 
 					$result = mysqli_query($conn, $query);
 
-					// echo"$result";
+					// echo "<script>alert('You have been register. Now login to continue.')</script>";
+
+                                        echo "<script>if(confirm('Your Record Sucessfully Inserted. Now Login')){document.location.href='login.php'};</script>";
 					
                 }
         }
