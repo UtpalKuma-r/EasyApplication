@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <body bgcolor="lightyellow">
-<FORM><fieldset><legend><ALIGN="CENTER">LOGIN</ALIGN="CENTER"></legend>
+<form><fieldset><legend><ALIGN="CENTER">LOGIN</ALIGN="CENTER"></legend>
 		<TABLE ALIGN="CENTER">
 			<TR>
 				<TD WIDTH="200">User Name:</TD>
@@ -19,35 +19,8 @@
 				<TD><INPUT TYPE="RESET"  VALUE="reset">&nbsp;&nbsp;&nbsp;</TD>
 			</tr>
                         
-
-
 </form>
-
 </body>
-
-<body>
-
-
-    <h1>Login below</h1>
-    <form action="" method="Post">
-
-        <label for="uname">User Name:</label>
-        <input type="text" name="uname" id="uname">
-<br>
-<br>
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password">   
-
-<br>
-<br>        
-        <button type="reset">Clear</button><button type="submit">Login</button>
-    </form>
-
-
-</body>
-</html>
-
-
 <?php
     
 
