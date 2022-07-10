@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-</head>
+<html>
+<body bgcolor="lightyellow">
+<FORM><fieldset><legend><ALIGN="CENTER">LOGIN</ALIGN="CENTER"></legend>
+		<TABLE ALIGN="CENTER">
+			<TR>
+				<TD WIDTH="200">User Name:</TD>
+				<TD WIDTH="600"><INPUT TYPE="TEXT" NAME="uname" required></TD>
+				<TD WIDTH="100"></TD>
+			</tr>
+			<TR>
+				<TD>Password</TD>
+				<TD><INPUT TYPE="password" INPUT="password" required></TD>
+				<TD></TD>
+			</tr>
+                        <TR>
+			
+				<TD ><button type="submit">Login</button></TD>
+				<TD><INPUT TYPE="RESET"  VALUE="reset">&nbsp;&nbsp;&nbsp;</TD>
+			</tr>
+                        
+
+
+</form>
+
+</body>
+
 <body>
 
 
