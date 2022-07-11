@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 </head>
+<?php
+    include "phpfiles/_dashboard.php";
+?>
 <body>
     
 </body>
