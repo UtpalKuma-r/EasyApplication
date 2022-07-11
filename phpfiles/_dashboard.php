@@ -7,11 +7,16 @@ session_start();
 if (isset($_SESSION["username"])){
     $query = "SELECT * FROM USERDATA WHERE USERNAME = '$_SESSION[username]'";
     $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_array($result);
 
     $username = $_SESSION["username"];
-    $phonenumber = $result["phonenumber"];
-    $email = $result["email"];
+    $name = $row["FirstName"]." ".$row["MiddleName"]." ".$row["LastName"];
+    $phonenumber = $row["PhoneNumber"];
+    $email = $row["Email"];
     
+    $query = "SELECT * FROM $_SESSION[username]";
+    $filesAvailable = mysqli_query($conn, $query);
+
     echo $username." ".$phonenumber." ".$email;
 
 }
