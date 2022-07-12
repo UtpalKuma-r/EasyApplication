@@ -9,7 +9,7 @@
         $email = $_POST["email"];
         $details = $_POST["details"];
 
-        $query = "INSERT INTO CONTACTREQUEST(Name, PhoneNumber, Email, Details) VALUES($name, $phonenumber, $email, $details)";
+        $query = "INSERT INTO CONTACTREQUESTS(Name, PhoneNumber, Email, Details) VALUES('$name', $phonenumber, '$email', '$details')";
         $result = mysqli_query($conn, $query);
 
         echo "<script>if(confirm('Your Record Sucessfully Inserted.')){document.location.href='contact.php'};</script>";
