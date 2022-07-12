@@ -10,9 +10,9 @@
 
 
     <h1>Contact</h1>
-    <form action="Post">
-        <label for="fname">Name:</label>
-        <input type="text" name="fname" id="fname">
+    <form method="Post">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
 <br>
 <br>
         <label for="phonenumber">Phone Number</label>
@@ -33,3 +33,6 @@
 
 </body>
 </html>
+<?php
+include "phpfiles/_contact.php";
+?>
