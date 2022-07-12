@@ -26,6 +26,7 @@
 	<div class="main">
 		<div class="header" style="display: flex; height: 24vh;">
 			<h1>EASSY APPLICATION</h1>
+			<a href="phpfiles/_logout.php">Logout</a>
 		</div>
 		<div class="tables" style="display: flex; height: 75vh; width: 100%;">
 
