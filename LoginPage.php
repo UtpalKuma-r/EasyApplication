@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+  require_once "phpfiles/_login.php";
+?>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Easy Application</title>
@@ -51,16 +53,16 @@
             <nav>
               <ul class="nav topnav">
                 <li class="dropdown success">
-                  <a href="Default(Home).html"><i class="icon-home icon-white"></i> Home</a>
+                  <a href="Default(Home).php"><i class="icon-home icon-white"></i> Home</a>
                 </li>
                 <li class="dropdown primary">
-                  <a href="RegForm.html"><i class="icon-star icon-white"></i> Register</a>
+                  <a href="RegForm.php"><i class="icon-star icon-white"></i> Register</a>
                 </li>
                 <li class="dropdown info active">
-                  <a href="LoginPage.html"><i class="icon-bullhorn icon-white"></i> Login</a>
+                  <a href="LoginPage.php"><i class="icon-bullhorn icon-white"></i> Login</a>
                 </li>
                 <li class="inverse">
-                  <a href="Contact.html"><i class="icon-envelope icon-white"></i> Contact</a>
+                  <a href="Contact.php"><i class="icon-envelope icon-white"></i> Contact</a>
                 </li>
               </ul>
             </nav>
@@ -73,15 +75,13 @@
 
   <!-- Subhead
 ================================================== -->
- <section id="subintro">
+  <section id="subintro">
     <div class="jumbotron subhead" id="overview">
       <div class="container">
         <div class="row">
           <div class="span8">
-            <h3><i class="m-icon-big-swapright m-icon-white"></i> About us</h3>
-            <p>One Stop For All Your Application</p>
-          </div>
-            <p></p>
+            <h3 style="font-size: xx-large; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Welcome....</h3>
+            <p>One Stop For All Your Applications:</p>
           </div>
         </div>
       </div>
@@ -90,22 +90,20 @@
 
   <section id="maincontent">
     <div class="container">
-        <table align="center">
-            <tr>
-                <td width="200">
-                    &nbsp;<img src="assets/img/file2.png" /></td>
-                 <td width="700" style="font-size: large; font-family: Avalon;">We know in hustle of the life people are running out of time this web page act as an interface between the government and the user it is a platform for the user to share there problem or suggestion in simple steps anytime and from anywhere and they will be updated for the same regularly.
+       <form method="post">
+		 <table align="CENTER">
+             <tr><td colspan="3">LOGIN </td></tr>
+			<tr><TD>User Name:</TD><TD><INPUT TYPE="TEXT" NAME="uname" required></TD><TD></TD></tr>
+			<tr><TD>Password:</TD><TD><INPUT TYPE="password" INPUT="password" name="password" required></TD><TD></TD></tr>
+            <TR><TD><button type="submit" style="background-color: #FFFF00; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 102px;">Login</button></TD><TD>&nbsp;&nbsp;&nbsp;<INPUT TYPE="RESET"  VALUE="Reset" style="background-color: #FF0000; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 100px; color: #FFFFFF;"></TD></tr>
+         </table>
+        </form>
 
-                </td>
-            </tr>
-       </table>
-        
-			
-  </div>
+    </div>
   </section>
   <!-- Footer
  ================================================== -->
-  <footer class="footer">
+ <footer class="footer">
     <div class="container">
       <div class="row">
         <div class="span4">
@@ -189,3 +187,6 @@
 </body>
 
 </html>
+
+
+

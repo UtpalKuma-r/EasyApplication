@@ -51,16 +51,16 @@
             <nav>
               <ul class="nav topnav">
                 <li class="dropdown success">
-                  <a href="Default(Home).html"><i class="icon-home icon-white"></i> Home</a>
+                  <a href="Default(Home).php"><i class="icon-home icon-white"></i> Home</a>
                 </li>
                 <li class="dropdown primary">
-                  <a href="RegForm.html"><i class="icon-star icon-white"></i> Register</a>
+                  <a href="RegForm.php"><i class="icon-star icon-white"></i> Register</a>
                 </li>
                 <li class="dropdown info active">
-                  <a href="LoginPage.html"><i class="icon-bullhorn icon-white"></i> Login</a>
+                  <a href="LoginPage.php"><i class="icon-bullhorn icon-white"></i> Login</a>
                 </li>
                 <li class="inverse">
-                  <a href="Contact.html"><i class="icon-envelope icon-white"></i> Contact</a>
+                  <a href="Contact.php"><i class="icon-envelope icon-white"></i> Contact</a>
                 </li>
               </ul>
             </nav>
@@ -70,8 +70,6 @@
       </div>
     </div>
   </header>
-
-
   <!-- Subhead
 ================================================== -->
   <section id="subintro">
@@ -79,7 +77,7 @@
       <div class="container">
         <div class="row">
           <div class="span8">
-            <h3 style="font-size: xx-large; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">CONTACT & FEEDBACK:</h3>
+            <h3 style="font-size: xx-large; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"><u>Staff Dashboard:</u></h3>
             <p>&nbsp;</p>
           </div>
         </div>
@@ -87,22 +85,41 @@
     </div>
   </section>
 
-   <section id="maincontent">
+  <section id="maincontent">
     <div class="container">
-        <table align="center">
-                    <tr><td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" width="150">Name:</td><td class="auto-style1"><input type="text" required style="width: 500px"></td></tr>
-                    <tr><td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Email:</td><td class="auto-style1"><input type="email" required style="width: 500px"></td></tr>
-                    <tr><td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Contact No:</td><td class="auto-style1"><input type="number" required style="width: 500px"></td></tr>
-                    <tr><td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Subject:</td><td class="auto-style1"><input type="text" required style="width: 500px"></td></tr>
-                    <tr><td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Matter:</td><td class="auto-style1"><textarea name="reasonToContact" id="Contactinfor" cols="30" rows="10" required style="width: 500px"></textarea></td></tr>
-                    <tr><td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Attahment:</td><td class="auto-style1"><input type="file" required style="width: 508px"submit"></td> <td class="auto-style1">&nbsp;</td></tr>
-                    <tr><td></td><td class="auto-style1"> <button type="reset" style="background-color: #FF0000; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 100px; color: #FFFFFF;">Reset</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button type="submit" style="background-color: #FFFF00; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 102px;">Submit</button></td> <td class="auto-style1">&nbsp;</td></tr>
-        </table> 
 
+                <table align="center">
+                    <tr>
+                         &nbsp;&nbsp;&nbsp;
+                        <td width="300">
+                            <TABLE BORDER="1" ALIGN="left" bordercolor="Green">
+                                <tr><td width="250" colspan="2" style="background-color: #0000FF; color: #FFFFFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;">USER DETAILS:</td></tr>
+	                             <TR><td align="center"><img src="assets/img/avatar.png"  height="10" width="10"  ></td><TD>USERNAME#</TD></TR>
+	                             <TR><TD>Name:</TD><TD></TD></TR>
+	                             <TR><TD>Department:</TD><TD></TD></TR>
+	                             <TR><TD>Active App.:</TD><TD></TD></TR>
+                                 <TR><TD>Total:</TD><TD></TD></TR>
+	                        </TABLE>
+                         </td>
+                        <td width="600">
+                            <table border="1" bordercolor="Green" align="right">
+	                            <TR><TD COLSPAN="3" style="background-color: #FF0000; color: #FFFFFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;" class="auto-style4"><u>ACTIVE APPLICATION:</u></TD></TR>
+	                            <TR><TH>FILE ID</TH><TH>DESCRIPTION</TH><TH>Action</TH></TR>
+	                            <TR><TD width="200" >#</TD><TD width="400" >#</TD><TD width="150"><a href="#"><button>K</button></a></TD></TR>
+	                            <TR><TD HIGHT=100% WIDTH=25%>sd</TD><TD HIGHT=100% WIDTH=100%>we</TD><TD HIGHT=100% WIDTH=100%><a href="#"><button type="button">K</button></a></TD></TR>
+	                            <TR><TD HIGHT=100% WIDTH=25%>we</TD><TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%><a href="#"><button>K</button type="button"></a></TD></TR>
+	                            <TR><TD HIGHT=100% WIDTH=25%>we</TD><TD HIGHT=100% WIDTH=100% ></TD><TD HIGHT=100% WIDTH=100% ><a href="#"><button>K</button type="button"></a></TD></TR>
+	                            <TR><TD HIGHT=100% WIDTH=25%</TD>sd<TD HIGHT=100% WIDTH=100%>we</TD><TD HIGHT=100% WIDTH=100%><a href="#"><button>K</button type="button"></a></TD></TR>
+	                            <TR><TD HIGHT=100% WIDTH=25%</TD>sd<TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%><a href="#"><button>K</button type="button"></a></TD></TR>
+	                            <TR><TD HIGHT=100% WIDTH=25%</TD>we<TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%><a href="#"><button>K</button type="button"></a></TD></TR>
+	                            <TR><TD HIGHT=100% WIDTH=25%</TD>we<TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%><a href="#"><button>K</button type="button"></a></TD></TR>
+	                        </table>
+                       
+                        </td>
+                    </tr>
+                </table> 
     </div>
   </section>
-  <!-- Footer
- ================================================== -->
  <footer class="footer">
     <div class="container">
       <div class="row">

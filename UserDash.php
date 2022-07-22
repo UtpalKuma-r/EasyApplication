@@ -35,7 +35,10 @@
         }
     </style>
 </head>
-
+<?php
+  include "phpfiles/_dashboard.php";
+  
+?>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
   <header>
@@ -51,16 +54,16 @@
             <nav>
               <ul class="nav topnav">
                 <li class="dropdown success">
-                  <a href="Default(Home).html"><i class="icon-home icon-white"></i> Home</a>
+                  <a href="Default(Home).php"><i class="icon-home icon-white"></i> Home</a>
                 </li>
                 <li class="dropdown primary">
-                  <a href="RegForm.html"><i class="icon-star icon-white"></i> Register</a>
+                  <a href="RegForm.php"><i class="icon-star icon-white"></i> Register</a>
                 </li>
                 <li class="dropdown info active">
-                  <a href="LoginPage.html"><i class="icon-bullhorn icon-white"></i> Login</a>
+                  <a href="phpfiles/_logout.php"><i class="icon-bullhorn icon-white"></i> Logout</a>
                 </li>
                 <li class="inverse">
-                  <a href="Contact.html"><i class="icon-envelope icon-white"></i> Contact</a>
+                  <a href="Contact.php"><i class="icon-envelope icon-white"></i> Contact</a>
                 </li>
               </ul>
             </nav>
@@ -79,7 +82,7 @@
       <div class="container">
         <div class="row">
           <div class="span8">
-            <h3 style="font-size: xx-large; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Registration:</h3>
+            <h3 style="font-size: xx-large; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"><u>User Dashboard:</u></h3>
             <p>&nbsp;</p>
           </div>
         </div>
@@ -89,54 +92,56 @@
 
   <section id="maincontent">
     <div class="container">
-        <FORM>
-		<TABLE ALIGN="CENTER">
-			<TR>
-				<TD colspan="3" ><H3>Create Your Account.It Will Take Only Few Minutes..</H3></TD>
-				
-			</tr>
-			<TR>
-				<TD >Name:</TD>
-				<TD ><INPUT TYPE="TEXT" NAME="First Name" required> </TD>
-				<TD ><INPUT TYPE="TEXT" NAME="Last Name"> </TD>
-			</tr>
-			<TR>
-				<TD >DOB:</TD>
-				<TD colspan="2"><INPUT TYPE="date"  NAME="dob" required></TD>
-				
-			</tr>
-			<TR>
-				<TD >Mobile No.:</TD>
-				<TD colspan="2"><INPUT TYPE="tel" NAME="Mob" required></TD>
-				
-			</tr>
-			<TR>
-				<TD >Email:</TD>
-				<TD ><INPUT TYPE="email" NAME="EmailId"></TD>
-				<TD ></TD>
-			</tr>
-			<TR>
-				<TD>Password:</TD>
-				<TD><INPUT TYPE="password" INPUT="password" required></TD>
-				<TD></TD>
-			</tr>
-            <TR>
-				<TD>Confirm Password:</TD>
-				<TD><INPUT TYPE="password" INPUT="password" required></TD>
-				<TD></TD>
-			</tr>
-            <tr>
-                <td><INPUT TYPE="Submit" VALUE="SUBMIT" style="background-color: #FFFF00; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 102px;" ></td>
-                <td><INPUT TYPE="RESET" style="background-color: #FF0000; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 100px; color: #FFFFFF;"RESET"></td>
-            </tr>     
-		</TABLE>
-		</FORM>
 
+                <table align="center">
+                    <tr>
+                         &nbsp;&nbsp;&nbsp;
+                        <td width="300">
+                            <TABLE BORDER="1" ALIGN="left" bordercolor="Green">
+                                <tr><td width="250" colspan="2" style="background-color: #0000FF; color: #FFFFFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;" class="auto-style5">USER DETAILS:</td></tr>
+	                            <TR>
+                                <TD align="center"> &nbsp;<img src="assets/img/avatar.png" height="2o" width="10" ></TD>
+                                <TD><?php echo $username; ?></TD>
+                              </TR>
+	                             <TR>
+                               <TD>Name:</TD>
+                               <TD><?php echo $name; ?></TD>
+                              </TR>
+	                            <TR>
+                                <TD>Number:</TD>
+                                <TD><?php echo $phonenumber; ?></TD>
+                              </TR>
+	                            <TR>
+                                <TD>E-Mail:</TD>
+                                <TD><?php echo $email; ?></TD>
+                              </TR>
+                                 <TR><TD colspan="2" align="center"><a href="AppForm.php"><button type="button">New Application</button></a></TD></TR>
+                                 
+	                        </TABLE>
+                         </td>
+                        <td width="600">
+                            <table border="1" bordercolor="Green" align="right">
+	                            <TR><TD COLSPAN="3" style="background-color: #FF0000; color: #FFFFFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;" class="auto-style4"><u>ACTIVE APPLICATION:</u></TD></TR>
+	                            <TR><TH>FILE ID</TH><TH>DESCRIPTION</TH><TH>Status</TH></TR>
+                              <?php
+                                if (mysqli_num_rows($filesAvailable) == 0){
+                                  echo "<TR><TD width=200 colspan=3 >No files available</TD></TR>";
+                                } 
+                                else{
+                                  while ($row = mysqli_fetch_assoc($filesAvailable)){
+                                    echo "<TR><TD width=200>$row[FileID]</TD><TD width=400>$row[Department]</TD><TD width=150>$row[FileStatus]</TD></TR>";
+                                  }
+                                }
+	                            
+                              ?>
+	                        </table>
+                       
+                        </td>
+                    </tr>
+                </table> 
     </div>
   </section>
-  <!-- Footer
- ================================================== -->
-<footer class="footer">
+  <footer class="footer">
     <div class="container">
       <div class="row">
         <div class="span4">
@@ -212,15 +217,9 @@
   <script src="assets/js/flexslider/jquery.flexslider.js"></script>
   <script src="assets/js/flexslider/setting.js"></script>
   <script src="assets/js/application.js"></script>
-
-  <!-- Template Custom JavaScript File -->
   <script src="assets/js/custom.js"></script>
 
 
 </body>
 
 </html>
-
-
-
-

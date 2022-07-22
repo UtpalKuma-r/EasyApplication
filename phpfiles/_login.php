@@ -3,7 +3,7 @@
 
     function authentication($username, $password){
 
-        include "partials/_connection.php";
+        include "_connection.php";
         
         $query = "SELECT * FROM LOGINDATA WHERE USERNAME = '$username'";
         $result = mysqli_query($conn, $query);
@@ -19,7 +19,7 @@
             $correcthash = $row["Hash"];            
 
             if (password_verify($password.$salt, $correcthash)){
-                return TRUE;
+                return [TRUE, $row["Role"]];
             }
 
             else{
@@ -35,11 +35,23 @@
 
         $loginpass = authentication($username, $password);
 
-        if ($loginpass){
+        if ($loginpass[0]){
             session_start();
             $_SESSION["username"] = $username;
+            
+            // setcookie("Role", $loginpass[1], time()+8*60*60);
+            // $test = $_SESSION['username'];
+            // echo '<script>alert("Welcome to Geeks for Geeks")</script>';
+            // echo "<script>alert('$test')</script>";
 
-            echo "<script>if(confirm('Login Successfull!!')){document.location.href='dashboard.php'};</script>";
+            if ($loginpass[1] == "user"){
+                // echo $texst;
+                $_SESSION["role"] = "user";
+                echo "<script>if(confirm('Login Successfull!!')){document.location.href='UserDash.php'};</script>";
+            }
+            elseif($loginpass[1] == "staff"){
+                echo "<script>if(confirm('Login Successfull!!')){document.location.href='StaffDash.php'};</script>";
+            }
         }
 
         else{

@@ -30,10 +30,7 @@
             width: 292px;
             height: 54px;
         }
-        .auto-style3 {
-            height: 26px;
-        }
-    </style>
+        </style>
 </head>
 
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
@@ -51,16 +48,16 @@
             <nav>
               <ul class="nav topnav">
                 <li class="dropdown success">
-                  <a href="Default(Home).html"><i class="icon-home icon-white"></i> Home</a>
+                  <a href="Default(Home).php"><i class="icon-home icon-white"></i> Home</a>
                 </li>
                 <li class="dropdown primary">
-                  <a href="RegForm.html"><i class="icon-star icon-white"></i> Register</a>
+                  <a href="RegForm.php"><i class="icon-star icon-white"></i> Dashboard</a>
                 </li>
                 <li class="dropdown info active">
-                  <a href="LoginPage.html"><i class="icon-bullhorn icon-white"></i> Login</a>
+                  <a href="LoginPage.php"><i class="icon-bullhorn icon-white"></i>Logout</a>
                 </li>
                 <li class="inverse">
-                  <a href="Contact.html"><i class="icon-envelope icon-white"></i> Contact</a>
+                  <a href="Contact.php"><i class="icon-envelope icon-white"></i> Contact</a>
                 </li>
               </ul>
             </nav>
@@ -71,7 +68,6 @@
     </div>
   </header>
 
-
   <!-- Subhead
 ================================================== -->
   <section id="subintro">
@@ -79,7 +75,7 @@
       <div class="container">
         <div class="row">
           <div class="span8">
-            <h3 style="font-size: xx-large; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"><u>User Dashboard:</u></h3>
+            <h3 style="font-size: xx-large; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Application Form:</h3>
             <p>&nbsp;</p>
           </div>
         </div>
@@ -89,40 +85,99 @@
 
   <section id="maincontent">
     <div class="container">
-
-                <table align="center">
-                    <tr>
-                         &nbsp;&nbsp;&nbsp;
-                        <td width="300">
-                            <TABLE BORDER="1" ALIGN="left" bordercolor="Green">
-                                <tr><td width="250" colspan="2" style="background-color: #0000FF; color: #FFFFFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;" class="auto-style5">USER DETAILS:</td></tr>
-	                             <TR><TD align="center"> &nbsp;<img src="assets/img/avatar.png" height="2o" width="10" ></TD><TD>USERNAME#</TD></TR>
-	                             <TR><TD>Name:</TD><TD></TD></TR>
-	                             <TR><TD>Number:</TD><TD></TD></TR>
-	                             <TR><TD>E-Mail:</TD><TD></TD></TR>
-                                 <TR><TD colspan="2" align="center"><a href="AppForm.aspx"><button type="button">New Application</button></a></TD></TR>
-	                        </TABLE>
-                         </td>
-                        <td width="600">
-                            <table border="1" bordercolor="Green" align="right">
-	                            <TR><TD COLSPAN="3" style="background-color: #FF0000; color: #FFFFFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;" class="auto-style4"><u>ACTIVE APPLICATION:</u></TD></TR>
-	                            <TR><TH>FILE ID</TH><TH>DESCRIPTION</TH><TH>Status</TH></TR>
-	                            <TR><TD width="200" >#</TD><TD width="400" >#</TD><TD width="150"></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%>sd</TD><TD HIGHT=100% WIDTH=100%>we</TD><TD HIGHT=100% WIDTH=100%></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%>we</TD><TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25% class="auto-style3">we</TD><TD HIGHT=100% WIDTH=100% class="auto-style3" ></TD><TD HIGHT=100% WIDTH=100% class="auto-style3" ></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%</TD>sd<TD HIGHT=100% WIDTH=100%>we</TD><TD HIGHT=100% WIDTH=100%></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%</TD>sd<TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%</TD>we<TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%</TD>we<TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%></TD></TR>
-	                        </table>
-                       
-                        </td>
-                    </tr>
-                </table> 
+       <fieldset>
+        <form action="phpfiles/_application.php" method="POST" enctype="multipart/form-data">
+		<TABLE ALIGN="CENTER">
+			<TR>
+				<TD WIDTH="200">First Name:</TD>
+				<TD WIDTH="600"><INPUT TYPE="TEXT" NAME="fname" required></TD>
+				<TD WIDTH="100"></TD>
+			</tr>
+      <TR>
+				<TD WIDTH="200">Last Name:</TD>
+				<TD WIDTH="600"><INPUT TYPE="TEXT" NAME="lname" required></TD>
+				<TD WIDTH="100"></TD>
+			</tr>
+			<TR>
+				<TD>Gender:</TD>
+				<TD><INPUT TYPE="radio" VALUE="Male" NAME="gender"> Male 
+					<INPUT TYPE="radio" VALUE="Feale" NAME="gender"> Female
+					<INPUT TYPE="radio" VALUE="Other" NAME="gender"> Other</TD>
+				<TD></TD>
+			</tr>
+      <TR>
+				<TD WIDTH="200">DOB:</TD>
+				<TD WIDTH="600"><INPUT TYPE="date" NAME="dob" required></TD>
+				<TD WIDTH="100"></TD>
+			</tr>
+			<TR>
+				<TD WIDTH="200">Father's Name:</TD>
+				<TD WIDTH="600"><INPUT TYPE="TEXT" NAME="fathername" required></TD>
+				<TD WIDTH="100"></TD>
+			</tr>
+			<TR>
+				<TD WIDTH="200">Mother's Name:</TD>
+				<TD WIDTH="600"><INPUT TYPE="TEXT" NAME="mothername" required></TD>
+				<TD WIDTH="100"></TD>
+			</tr>
+			<TR>
+				<TD WIDTH="200">Mobile No.:</TD>
+				<TD WIDTH="600"><INPUT TYPE="number" NAME="phonenumber" required></TD>
+				<TD WIDTH="100"></TD>
+			</tr>
+			<TR>
+				<TD WIDTH="200">Email:</TD>
+				<TD WIDTH="600"><INPUT TYPE="TEXT" NAME="email" required></TD>
+				<TD WIDTH="100"></TD>
+			</tr>
+			<TR>
+				<TD WIDTH="200">State:</TD>
+				<TD WIDTH="600"><INPUT TYPE="TEXT" NAME="state" required></TD>
+				<TD WIDTH="100"></TD>
+			</tr>
+			<TR>
+				<TD WIDTH="200">District:</TD>
+				<TD WIDTH="600"><INPUT TYPE="TEXT" NAME="district" required></TD>
+				<TD WIDTH="100"></TD>
+			</tr>
+			<TR>
+				<TD WIDTH="200">Sub-Division:</TD>
+				<TD WIDTH="600"><INPUT TYPE="TEXT" NAME="subdiv"></TD>
+				<TD WIDTH="100"></TD>
+			</tr>
+            <TR>
+				<TD WIDTH="200">Address:</TD>
+				<TD WIDTH="600"><INPUT TYPE="TEXT" NAME="address" required></TD>
+				<TD WIDTH="100"></TD>
+			</tr>
+            <TR>
+				<TD WIDTH="200">Pincode:</TD>
+				<TD WIDTH="600"><INPUT TYPE="number" NAME="pincode" required></TD>
+				<TD WIDTH="100"></TD>
+			</tr>
+            <TR>
+				<TD WIDTH="200">Img. Upload:</TD>
+				<TD WIDTH="600"><INPUT TYPE="file" NAME="image" required></TD>
+				<TD WIDTH="100"></TD>
+			</tr>
+            <TR>
+				<TD WIDTH="200">Sign. Upload:</TD>
+				<TD WIDTH="600"><INPUT TYPE="file" NAME="signature" required></TD>
+				<TD WIDTH="100"></TD>
+			</tr>
+            <TR>
+				<TD WIDTH="200"><INPUT TYPE="Submit" VALUE="SUBMIT" style="background-color: #FFFF00; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 102px;"></TD>
+				<TD WIDTH="600"><INPUT TYPE="RESET"  VALUE="RESET" style="background-color: #FF0000; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 100px; color: #FFFFFF;"></TD>
+				<TD WIDTH="100">&nbsp;</TD>
+			</tr>
+		</TABLE>
+      </form>
+      </fieldset>
     </div>
   </section>
-  <footer class="footer">
+  <!-- Footer
+ ================================================== -->
+ <footer class="footer">
     <div class="container">
       <div class="row">
         <div class="span4">
@@ -198,9 +253,13 @@
   <script src="assets/js/flexslider/jquery.flexslider.js"></script>
   <script src="assets/js/flexslider/setting.js"></script>
   <script src="assets/js/application.js"></script>
+
+  <!-- Template Custom JavaScript File -->
   <script src="assets/js/custom.js"></script>
 
 
 </body>
 
 </html>
+
+

@@ -1,5 +1,6 @@
 <?php
-        include "partials/_connection.php";
+        include "_connection.php";
+        // mysqli_select_db($conn, "EASYAPPLICATION");
 
         function generateRandomString($length = 10) {
                 $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -9,11 +10,12 @@
                     $randomString .= $characters[rand(0, $charactersLength - 1)];
                 }
                 return $randomString;
-            }
+        }
 
+        
         function checkduplicate($username, $phonenumber, $email){
 
-                include "partials/_connection.php";
+                include "_connection.php";
 
                 $query = "SELECT * FROM USERDATA WHERE USERNAME = '$username'";
                 $result = mysqli_query($conn, $query);
@@ -52,7 +54,6 @@
 			if ($_POST["password"] == $_POST["cpassword"]){
 					$username = $_POST["uname"];
 					$firstname = $_POST["fname"];
-					$middlename = $_POST["mname"];
 					$lastname = $_POST["lname"];
 					$dob = $_POST["dob"];
 					$phonenumber = $_POST["phonenumber"];
@@ -63,33 +64,36 @@
 					$passwordhash = password_hash($password.$salt, PASSWORD_DEFAULT);
 
                                         $duplicate = checkduplicate($username, $phonenumber, $email);
+
                                         if (!$duplicate[0]){
                                                 echo "<script>alert('$duplicate[1]')</script>";
                                         }
 
                                         else{
-                                                $query = "INSERT INTO USERDATA VALUES('$username', '$firstname', '$middlename', '$lastname', '$dob', '$phonenumber', '$email')";
-					        $result = mysqli_query($conn, $query);   
-                                        
-					
+
+                                                mysqli_select_db($conn, "usertables");
+                                                $query = "CREATE TABLE $username(
+                                                FileID int(10) primary key auto_increment,
+                                                Department varchar(24) not null,
+                                                DateOfSubmission Date default curdate() not null,
+                                                DateOfComplition Date,
+                                                FileStatus varchar(26) not null 
+                                                )";
+                                                $result = mysqli_query($conn, $query);
 
                                                 if ($result){
+                                                        mysqli_select_db($conn, "easyapplication");
+                                                        $query = "INSERT INTO USERDATA VALUES('$username', '$firstname', '$lastname', '$dob', '$phonenumber', '$email')";
+                                                        $result = mysqli_query($conn, $query);   
+                                                }
+
+                                                if ($result){
+                                                        mysqli_select_db($conn, "easyapplication");
                                                         $query = "INSERT INTO LOGINDATA VALUES('$username', '$salt', '$passwordhash', 'user')";
                                                         $result = mysqli_query($conn, $query);
                                                 }
                                                 
-                                                if ($result){
-                                                        $query = "CREATE TABLE $username(
-                                                        FileID int(10) primary key auto_increment,
-                                                        Department varchar(24) not null,
-                                                        DateOfSubmission Date default curdate() not null,
-                                                        DateOfComplition Date,
-                                                        FileStatus varchar(26) not null 
-                                                        )";
-                                                        $result = mysqli_query($conn, $query);
-                                                }
-                                                
-                                                echo "<script>if(confirm('Your Record Sucessfully Inserted. Now Login')){document.location.href='login.php'};</script>";
+                                                echo "<script>if(confirm('Your Record Sucessfully Inserted. Now Login')){document.location.href='LoginPage.php'};</script>";
                                         }
 
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+6<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -51,16 +51,16 @@
             <nav>
               <ul class="nav topnav">
                 <li class="dropdown success">
-                  <a href="Default(Home).html"><i class="icon-home icon-white"></i> Home</a>
+                  <a href="Default(Home).php"><i class="icon-home icon-white"></i> Home</a>
                 </li>
                 <li class="dropdown primary">
-                  <a href="RegForm.html"><i class="icon-star icon-white"></i> Register</a>
+                  <a href="RegForm.php"><i class="icon-star icon-white"></i> Register</a>
                 </li>
                 <li class="dropdown info active">
-                  <a href="LoginPage.html"><i class="icon-bullhorn icon-white"></i> Login</a>
+                  <a href="LoginPage.php"><i class="icon-bullhorn icon-white"></i> Login</a>
                 </li>
                 <li class="inverse">
-                  <a href="Contact.html"><i class="icon-envelope icon-white"></i> Contact</a>
+                  <a href="Contact.php"><i class="icon-envelope icon-white"></i> Contact</a>
                 </li>
               </ul>
             </nav>
@@ -70,6 +70,8 @@
       </div>
     </div>
   </header>
+
+
   <!-- Subhead
 ================================================== -->
   <section id="subintro">
@@ -77,7 +79,7 @@
       <div class="container">
         <div class="row">
           <div class="span8">
-            <h3 style="font-size: xx-large; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"><u>Staff Dashboard:</u></h3>
+            <h3 style="font-size: xx-large; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Registration:</h3>
             <p>&nbsp;</p>
           </div>
         </div>
@@ -87,40 +89,58 @@
 
   <section id="maincontent">
     <div class="container">
+    <FORM method="post">
+		<TABLE ALIGN="CENTER">
+			<TR>
+				<TD colspan="3" ><H3>Create Your Account.It Will Take Only Few Minutes..</H3></TD>
+				
+			</tr>
+      <TR>
+				<TD >User Name:</TD>
+				<TD ><INPUT TYPE="TEXT" NAME="uname" required> </TD>
+			</tr>
+			<TR>
+				<TD >Name:</TD>
+				<TD ><INPUT TYPE="TEXT" NAME="fname" required> </TD>
+				<TD ><INPUT TYPE="TEXT" NAME="lname"> </TD>
+			</tr>
+			<TR>
+				<TD >DOB:</TD>
+				<TD colspan="2"><INPUT TYPE="date"  NAME="dob" required></TD>
+				
+			</tr>
+			<TR>
+				<TD >Mobile No.:</TD>
+				<TD colspan="2"><INPUT TYPE="tel" NAME="phonenumber" required></TD>
+				
+			</tr>
+			<TR>
+				<TD >Email:</TD>
+				<TD ><INPUT TYPE="email" NAME="email"></TD>
+				<TD ></TD>
+			</tr>
+			<TR>
+				<TD>Password:</TD>
+				<TD><INPUT TYPE="password" INPUT="password" name="password" required></TD>
+				<TD></TD>
+			</tr>
+            <TR>
+				<TD>Confirm Password:</TD>
+				<TD><INPUT TYPE="password" INPUT="password" name="cpassword" required></TD>
+				<TD></TD>
+			</tr>
+            <tr>
+                <td><INPUT TYPE="Submit" VALUE="SUBMIT" style="background-color: #FFFF00; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 102px;" ></td>
+                <td><INPUT TYPE="RESET" style="background-color: #FF0000; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 100px; color: #FFFFFF;"RESET"></td>
+            </tr>     
+		</TABLE>
+		</FORM>
 
-                <table align="center">
-                    <tr>
-                         &nbsp;&nbsp;&nbsp;
-                        <td width="300">
-                            <TABLE BORDER="1" ALIGN="left" bordercolor="Green">
-                                <tr><td width="250" colspan="2" style="background-color: #0000FF; color: #FFFFFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;">USER DETAILS:</td></tr>
-	                             <TR><td align="center"><img src="assets/img/avatar.png"  height="10" width="10"  ></td><TD>USERNAME#</TD></TR>
-	                             <TR><TD>Name:</TD><TD></TD></TR>
-	                             <TR><TD>Department:</TD><TD></TD></TR>
-	                             <TR><TD>Active App.:</TD><TD></TD></TR>
-                                 <TR><TD>Total:</TD><TD></TD></TR>
-	                        </TABLE>
-                         </td>
-                        <td width="600">
-                            <table border="1" bordercolor="Green" align="right">
-	                            <TR><TD COLSPAN="3" style="background-color: #FF0000; color: #FFFFFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;" class="auto-style4"><u>ACTIVE APPLICATION:</u></TD></TR>
-	                            <TR><TH>FILE ID</TH><TH>DESCRIPTION</TH><TH>Action</TH></TR>
-	                            <TR><TD width="200" >#</TD><TD width="400" >#</TD><TD width="150"><a href="#"><button>K</button></a></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%>sd</TD><TD HIGHT=100% WIDTH=100%>we</TD><TD HIGHT=100% WIDTH=100%><a href="#"><button type="button">K</button></a></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%>we</TD><TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%><a href="#"><button>K</button type="button"></a></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%>we</TD><TD HIGHT=100% WIDTH=100% ></TD><TD HIGHT=100% WIDTH=100% ><a href="#"><button>K</button type="button"></a></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%</TD>sd<TD HIGHT=100% WIDTH=100%>we</TD><TD HIGHT=100% WIDTH=100%><a href="#"><button>K</button type="button"></a></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%</TD>sd<TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%><a href="#"><button>K</button type="button"></a></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%</TD>we<TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%><a href="#"><button>K</button type="button"></a></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%</TD>we<TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%><a href="#"><button>K</button type="button"></a></TD></TR>
-	                        </table>
-                       
-                        </td>
-                    </tr>
-                </table> 
     </div>
   </section>
- <footer class="footer">
+  <!-- Footer
+ ================================================== -->
+<footer class="footer">
     <div class="container">
       <div class="row">
         <div class="span4">
@@ -204,5 +224,9 @@
 </body>
 
 </html>
+
+<?php
+ require_once "phpfiles/_register.php";
+?>
 
 
