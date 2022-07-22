@@ -102,7 +102,7 @@
 			<TR>
 				<TD >Name:</TD>
 				<TD ><INPUT TYPE="TEXT" NAME="fname" required> </TD>
-				<TD ><INPUT TYPE="TEXT" NAME="lname"> </TD>
+				<TD ><INPUT TYPE="TEXT" NAME="lname"></TD>
 			</tr>
 			<TR>
 				<TD >DOB:</TD>
@@ -118,6 +118,11 @@
 				<TD >Email:</TD>
 				<TD ><INPUT TYPE="email" NAME="email"></TD>
 				<TD ></TD>
+			</tr>
+      <TR>
+				<TD>Img. Upload:</TD>
+				<TD WIDTH="600"><INPUT TYPE="file" NAME="image" required></TD>
+				<!-- <TD WIDTH="100"></TD> -->
 			</tr>
 			<TR>
 				<TD>Password:</TD>
