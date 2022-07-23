@@ -47,6 +47,14 @@
                 }
         }
 
+        function extentioncheck($Image){
+                $someData = explode('.', $Image["name"]);
+                $imageExtention = strtolower(end($someData));
+                $allowedExtention = array('png', 'jpg', 'jpeg');
+        
+                return in_array($imageExtention, $allowedExtention);
+            }
+
         if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 			// echo "<script>alert('POST method called')</script>";
@@ -59,6 +67,7 @@
 					$phonenumber = $_POST["phonenumber"];
 					$email = $_POST["email"];
 					$password = $_POST["password"];
+                                        $image = $_FILES["image"];
 					$salt = generateRandomString();
 
 					$passwordhash = password_hash($password.$salt, PASSWORD_DEFAULT);
@@ -81,19 +90,33 @@
                                                 )";
                                                 $result = mysqli_query($conn, $query);
 
+                                                if (extentioncheck($image) && extentioncheck($signature)){
+                                                        if ($image["size"] > 90000 && $signature["size"] > 90000){
+                                                            echo "<script>alert('File size must be less then 5mb.')</script>";
+                                                        }
+                                                        else{
+                                                            $imagedestination = "../UserImage/".$username.$image["name"];
+                                                            move_uploaded_file($image["tmp_name"], $imagedestination);
+                                                        }
+                                                }
                                                 if ($result){
                                                         mysqli_select_db($conn, "easyapplication");
-                                                        $query = "INSERT INTO USERDATA VALUES('$username', '$firstname', '$lastname', '$dob', '$phonenumber', '$email')";
+                                                        $query = "INSERT INTO USERDATA VALUES('$username', '$firstname', '$lastname', '$dob', '$phonenumber', '$email', '$imagedestination')";
                                                         $result = mysqli_query($conn, $query);   
+                                                
+
+                                                        if ($result){
+                                                                mysqli_select_db($conn, "easyapplication");
+                                                                $query = "INSERT INTO LOGINDATA VALUES('$username', '$salt', '$passwordhash', 'user')";
+                                                                $result = mysqli_query($conn, $query);
+
+                                                                if ($result){
+                                                                        echo "<script>if(confirm('Your Record Sucessfully Inserted. Now Login')){document.location.href='LoginPage.php'};</script>";
+                                                                }
+                                                        }
                                                 }
 
-                                                if ($result){
-                                                        mysqli_select_db($conn, "easyapplication");
-                                                        $query = "INSERT INTO LOGINDATA VALUES('$username', '$salt', '$passwordhash', 'user')";
-                                                        $result = mysqli_query($conn, $query);
-                                                }
                                                 
-                                                echo "<script>if(confirm('Your Record Sucessfully Inserted. Now Login')){document.location.href='LoginPage.php'};</script>";
                                         }
 
 

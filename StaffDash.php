@@ -51,7 +51,7 @@
             <nav>
               <ul class="nav topnav">
                 <li class="dropdown success">
-                  <a href="Default(Home).php"><i class="icon-home icon-white"></i> Home</a>
+                  <a href="index.php"><i class="icon-home icon-white"></i> Home</a>
                 </li>
                 <li class="dropdown primary">
                   <a href="RegForm.php"><i class="icon-star icon-white"></i> Register</a>

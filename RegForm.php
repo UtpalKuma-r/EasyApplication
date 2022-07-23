@@ -51,7 +51,7 @@
             <nav>
               <ul class="nav topnav">
                 <li class="dropdown success">
-                  <a href="Default(Home).php"><i class="icon-home icon-white"></i> Home</a>
+                  <a href="index.php"><i class="icon-home icon-white"></i> Home</a>
                 </li>
                 <li class="dropdown primary">
                   <a href="RegForm.php"><i class="icon-star icon-white"></i> Register</a>
@@ -88,60 +88,62 @@
   </section>
 
   <section id="maincontent">
+    
     <div class="container">
-    <FORM method="post">
-		<TABLE ALIGN="CENTER">
-			<TR>
-				<TD colspan="3" ><H3>Create Your Account.It Will Take Only Few Minutes..</H3></TD>
-				
-			</tr>
-      <TR>
-				<TD >User Name:</TD>
-				<TD ><INPUT TYPE="TEXT" NAME="uname" required> </TD>
-			</tr>
-			<TR>
-				<TD >Name:</TD>
-				<TD ><INPUT TYPE="TEXT" NAME="fname" required> </TD>
-				<TD ><INPUT TYPE="TEXT" NAME="lname"></TD>
-			</tr>
-			<TR>
-				<TD >DOB:</TD>
-				<TD colspan="2"><INPUT TYPE="date"  NAME="dob" required></TD>
-				
-			</tr>
-			<TR>
-				<TD >Mobile No.:</TD>
-				<TD colspan="2"><INPUT TYPE="tel" NAME="phonenumber" required></TD>
-				
-			</tr>
-			<TR>
-				<TD >Email:</TD>
-				<TD ><INPUT TYPE="email" NAME="email"></TD>
-				<TD ></TD>
-			</tr>
-      <TR>
-				<TD>Img. Upload:</TD>
-				<TD WIDTH="600"><INPUT TYPE="file" NAME="image" required></TD>
-				<!-- <TD WIDTH="100"></TD> -->
-			</tr>
-			<TR>
-				<TD>Password:</TD>
-				<TD><INPUT TYPE="password" INPUT="password" name="password" required></TD>
-				<TD></TD>
-			</tr>
-            <TR>
-				<TD>Confirm Password:</TD>
-				<TD><INPUT TYPE="password" INPUT="password" name="cpassword" required></TD>
-				<TD></TD>
-			</tr>
-            <tr>
-                <td><INPUT TYPE="Submit" VALUE="SUBMIT" style="background-color: #FFFF00; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 102px;" ></td>
-                <td><INPUT TYPE="RESET" style="background-color: #FF0000; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 100px; color: #FFFFFF;"RESET"></td>
-            </tr>     
-		</TABLE>
-		</FORM>
+      <FORM method="post" enctype="multipart/form-data">
+        <TABLE ALIGN="CENTER">
+          <TR>
+            <TD colspan="3" ><H3>Create Your Account.It Will Take Only Few Minutes..</H3></TD>
+            
+          </tr>
+          <TR>
+            <TD >User Name:</TD>
+            <TD ><INPUT TYPE="TEXT" NAME="uname" required> </TD>
+          </tr>
+          <TR>
+            <TD >Name:</TD>
+            <TD ><INPUT TYPE="TEXT" NAME="fname" required> </TD>
+            <TD ><INPUT TYPE="TEXT" NAME="lname"></TD>
+          </tr>
+          <TR>
+            <TD >DOB:</TD>
+            <TD colspan="2"><INPUT TYPE="date"  NAME="dob" required></TD>
+            
+          </tr>
+          <TR>
+            <TD >Mobile No.:</TD>
+            <TD colspan="2"><INPUT TYPE="tel" NAME="phonenumber" required></TD>
+            
+          </tr>
+          <TR>
+            <TD >Email:</TD>
+            <TD ><INPUT TYPE="email" NAME="email"></TD>
+            <TD ></TD>
+          </tr>
+          <TR>
+            <TD>Img. Upload:</TD>
+            <TD WIDTH="600"><INPUT TYPE="file" NAME="image" required></TD>
+            <!-- <TD WIDTH="100"></TD> -->
+          </tr>
+          <TR>
+            <TD>Password:</TD>
+            <TD><INPUT TYPE="password" INPUT="password" name="password" required></TD>
+            <TD></TD>
+          </tr>
+                <TR>
+            <TD>Confirm Password:</TD>
+            <TD><INPUT TYPE="password" INPUT="password" name="cpassword" required></TD>
+            <TD></TD>
+          </tr>
+                <tr>
+                    <td><INPUT TYPE="Submit" VALUE="SUBMIT" style="background-color: #FFFF00; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 102px;" ></td>
+                    <td><INPUT TYPE="RESET" style="background-color: #FF0000; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 100px; color: #FFFFFF;"RESET"></td>
+                </tr>     
+        </TABLE>
+	    </FORM>
 
     </div>
+    
   </section>
   <!-- Footer
  ================================================== -->
