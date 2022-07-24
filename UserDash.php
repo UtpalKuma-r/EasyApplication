@@ -78,7 +78,7 @@
   <!-- Subhead
 ================================================== -->
   <section id="subintro">
-    <div class="jumbotron subhead" id="overview">
+    <div class="jumbotron subhead" id="overview" style="margin:0;">
       <div class="container">
         <div class="row">
           <div class="span8">
@@ -95,9 +95,24 @@
 
                 <table align="center">
                     <tr>
-                         &nbsp;&nbsp;&nbsp;
+                    <td width="400" style="border: solid;">
+                    <div style="margin: 5px; border-bottom:solid 2px red;">
+                    <img src="<?php echo $image ?>" height="20o" width="100" style="border-radius: 100%; margin:5px;">
+                    <h1 style="display: inline;"><?php echo $username; ?></h1>
+                    </div>
+                    <div style="margin: 5px; border-bottom:solid 2px red;">
+                    <h5>
+                      <ul style="list-style-type: none;"><br>
+                      <li>Name: <?php echo $name; ?></li><br>
+                      <li>Phone Number: <?php echo $phonenumber; ?></li><br>
+                      <li>Email: <?php echo $email; ?></li><br>
+                    </ul>
+                    </h5>
+                  </div>
+                    <div style="margin: 5px;"><a href="AppForm.php"><button type="button">New Application</button></a></div>
+                         <!-- &nbsp;&nbsp;&nbsp;
                         <td width="300">
-                            <TABLE BORDER="1" ALIGN="left" bordercolor="Green">
+                            <TABLE  ALIGN="left" bordercolor="Green">
                                 <tr><td width="250" colspan="2" style="background-color: #0000FF; color: #FFFFFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;" class="auto-style5">USER DETAILS:</td></tr>
 	                            <TR>
                                 <TD align="center"> &nbsp;<img src="<?php echo $image ?>" height="20o" width="100" ></TD>
@@ -117,7 +132,7 @@
                               </TR>
                                  <TR><TD colspan="2" align="center"><a href="AppForm.php"><button type="button">New Application</button></a></TD></TR>
                                  
-	                        </TABLE>
+	                        </TABLE> -->
                          </td>
                         <td width="600">
                             <table border="1" bordercolor="Green" align="right">

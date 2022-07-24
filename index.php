@@ -78,8 +78,8 @@
       <div class="container">
         <div class="row">
           <div class="span8">
-            <h3><i class="m-icon-big-swapright m-icon-white"></i> About us</h3>
-            <p>One Stop For All Your Application</p>
+            <h3><i class="m-icon-big-swapright m-icon-white"></i><h1><b>About us</b> </h1> </h3>
+            <p><h1>One Stop For All Your Application</h1> </p>
           </div>
             <p></p>
           </div>
@@ -94,7 +94,8 @@
             <tr>
                 <td width="200">
                     &nbsp;<img src="assets/img/file2.png" /></td>
-                 <td width="700" style="font-size: large; font-family: Avalon;">We know in hustle of the life people are running out of time. This web page act as an interface between the government and the user. It is a platform for the user to share there problem or suggestion in simple steps anytime and from anywhere and they will be updated for the same regularly.
+                 <td width="700" style="font-size: large; font-family: Avalon;"><h2> We know in hustle of the life people are running out of time. This web page act as an interface between the government and the user. It is a platform for the user to share there problem or suggestion in simple steps anytime and from anywhere and they will be updated for the same regularly.</h2>
+                
 
                 </td>
             </tr>
