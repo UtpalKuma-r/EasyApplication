@@ -16,9 +16,11 @@ if (isset($_SESSION["username"])){
         $name = $row["FirstName"]." ".$row["LastName"];
         $phonenumber = $row["PhoneNumber"];
         $email = $row["Email"];
+        $image = $row["Image"];
 
-        mysqli_select_db($conn, "usertables");
-        $query = "SELECT * FROM $_SESSION[username]";
+        // mysqli_select_db($conn, "usertables");
+
+        $query = "SELECT * FROM fileprogress WHERE UserName = '$username'";
         $filesAvailable = mysqli_query($conn, $query);
 
         // echo $username." ".$phonenumber." ".$email;

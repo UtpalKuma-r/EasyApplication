@@ -100,7 +100,7 @@
                             <TABLE BORDER="1" ALIGN="left" bordercolor="Green">
                                 <tr><td width="250" colspan="2" style="background-color: #0000FF; color: #FFFFFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;" class="auto-style5">USER DETAILS:</td></tr>
 	                            <TR>
-                                <TD align="center"> &nbsp;<img src="assets/img/avatar.png" height="2o" width="10" ></TD>
+                                <TD align="center"> &nbsp;<img src="<?php echo $image ?>" height="20o" width="100" ></TD>
                                 <TD><?php echo $username; ?></TD>
                               </TR>
 	                             <TR>
@@ -129,7 +129,7 @@
                                 } 
                                 else{
                                   while ($row = mysqli_fetch_assoc($filesAvailable)){
-                                    echo "<TR><TD width=200>$row[FileID]</TD><TD width=400>$row[Department]</TD><TD width=150>$row[FileStatus]</TD></TR>";
+                                    echo "<TR><TD width=200>$row[FileID]</TD><TD width=400>$row[Department] $row[Remarks]</TD><TD width=150>$row[FileStatus]</TD></TR>";
                                   }
                                 }
 	                            

@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+  require_once "phpfiles/_application.php";
+?>
+
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Easy Application</title>
@@ -86,7 +90,7 @@
   <section id="maincontent">
     <div class="container">
        <fieldset>
-        <form action="phpfiles/_application.php" method="POST" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data">
 		<TABLE ALIGN="CENTER">
 			<TR>
 				<TD WIDTH="200">First Name:</TD>

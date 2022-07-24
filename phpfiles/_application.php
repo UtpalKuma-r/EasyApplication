@@ -43,24 +43,24 @@
                     echo "<script>alert('File size must be less then 5mb.')</script>";
                 }
                 else{
-                    $imagedestination = "../aadharImage/".$username.$image["name"];
+                    $imagedestination = "aadharImage/".$username.$image["name"];
                     move_uploaded_file($image["tmp_name"], $imagedestination);
 
-                    $signaturedestination = "../aadharSign/".$username.$image["name"];
+                    $signaturedestination = "aadharSign/".$username.$image["name"];
                     move_uploaded_file($signature["tmp_name"], $signaturedestination);
 
-                    $query = "INSERT INTO fileuserrelation VALUES('$fileID', '$username', 'aadhar')";
-                    $result = mysqli_query($conn, $query);
+                    // $query = "INSERT INTO fileuserrelation VALUES('$fileID', '$username')";
+                    // $result = mysqli_query($conn, $query);
 
-                    mysqli_select_db($conn, "usertables");
-                    $query = "INSERT INTO $username(FileID, Department, FileStatus) VALUES('$fileID', 'aadhar', 'submitted')";
+                    // mysqli_select_db($conn, "usertables");
+                    $query = "INSERT INTO fileprogress(FileID, UserName, Department, FileStatus) VALUES('$fileID', '$username', 'aadhar', 'submitted')";
                     $result = mysqli_query($conn, $query);
 
                     mysqli_select_db($conn, "aadhar");
                     $query = "INSERT INTO filedata VALUES('$fileID', '$firstname', '$lastname', '$gender', '$dob', '$fathername', '$mothername', '$phonenumber', '$email', '$state', '$district', '$subdiv', '$address', '$pincode', '$imagedestination', '$signaturedestination')";
                     $result = mysqli_query($conn, $query);
 
-                    echo "<script>if(confirm('Your application has been submitted.')){document.location.href='../UserDash.php'};</script>";
+                    echo "<script>if(confirm('Your application has been submitted.')){document.location.href='UserDash.php'};</script>";
 
                 }
             }
@@ -73,6 +73,6 @@
     }
 
     else{
-        echo "<script>if(confirm('You are not logged in. Login to continue.')){document.location.href='../LoginPage.php'};</script>";
+        echo "<script>if(confirm('You are not logged in. Login to continue.')){document.location.href='LoginPage.php'};</script>";
     }
 ?>
