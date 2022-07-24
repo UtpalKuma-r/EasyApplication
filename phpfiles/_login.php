@@ -47,7 +47,7 @@
             if ($loginpass[1] == "user"){
                 // echo $texst;
                 $_SESSION["role"] = "user";
-                echo "<script>if(confirm('Login Successfull!!')){document.location.href='UserDash.php'};</script>";
+                echo "<script>document.location.href='UserDash.php';</script>";
             }
             elseif($loginpass[1] == "staff"){
                 echo "<script>if(confirm('Login Successfull!!')){document.location.href='StaffDash.php'};</script>";
