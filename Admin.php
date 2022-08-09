@@ -128,7 +128,6 @@ include "phpfiles/_admin.php";
                     </tr>
                 </table> 
     </div>
-    </div>
   </section>
 <footer class="footer">
     <div class="container">

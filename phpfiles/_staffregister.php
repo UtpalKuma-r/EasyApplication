@@ -102,7 +102,7 @@
 
                                     if ($result){
                                         mysqli_select_db($conn, "aadhar");
-                                        $query = "INSERT INTO STAFFDATA VALUES ('$username', '$role', 0, 0)";
+                                        $query = "INSERT INTO STAFFDATA VALUES ('$username', '$role', 0, 0, 0)";
                                         $result = mysqli_query($conn, $query);
                                         echo "<script>if(confirm('Your Record Sucessfully Inserted')){document.location.href='Admin.php'};</script>";
                                     }

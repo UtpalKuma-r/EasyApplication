@@ -105,8 +105,8 @@
           </tr>
           <tr>
             <td>Role:</td>
-            <TD><INPUT TYPE="radio" VALUE="admin" NAME="gender"> Admin 
-			    <INPUT TYPE="radio" VALUE="staff" NAME="gender"> Staff</TD>
+            <TD><INPUT TYPE="radio" VALUE="admin" NAME="role"> Admin 
+			    <INPUT TYPE="radio" VALUE="staff" NAME="role"> Staff</TD>
           </tr>
           <TR>
             <TD >Name:</TD>

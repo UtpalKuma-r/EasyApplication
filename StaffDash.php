@@ -35,7 +35,9 @@
         }
     </style>
 </head>
-
+<?php
+include "phpfiles/_staff.php";
+?>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
   <header>
@@ -87,32 +89,44 @@
 
   <section id="maincontent">
     <div class="container">
-
-                <table align="center">
+    <table align="center">
                     <tr>
-                         &nbsp;&nbsp;&nbsp;
-                        <td width="300">
-                            <TABLE BORDER="1" ALIGN="left" bordercolor="Green">
-                                <tr><td width="250" colspan="2" style="background-color: #0000FF; color: #FFFFFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;">USER DETAILS:</td></tr>
-	                             <TR><td align="center"><img src="assets/img/avatar.png"  height="10" width="10"  ></td><TD>USERNAME#</TD></TR>
-	                             <TR><TD>Name:</TD><TD></TD></TR>
-	                             <TR><TD>Department:</TD><TD></TD></TR>
-	                             <TR><TD>Active App.:</TD><TD></TD></TR>
-                                 <TR><TD>Total:</TD><TD></TD></TR>
-	                        </TABLE>
+                    <td width="400" style="border: solid;">
+                    <div style="margin: 5px; border-bottom:solid 2px red;">
+                    <img src="<?php echo $image ?>" height="20o" width="100" style="border-radius: 100%; margin:5px;">
+                    <h1 style="display: inline;"><?php echo $username; ?></h1>
+                    </div>
+                    <div style="margin: 5px; border-bottom:solid 2px red;">
+                    <h5>
+                      <ul style="list-style-type: none;"><br>
+                      <li>Name: <?php echo $name; ?></li><br>
+                      <li>Phone Number: <?php echo $phonenumber; ?></li><br>
+                      <li>Email: <?php echo $email; ?></li><br>
+                    </ul>
+                    </h5>
+                  </div>
+                    <!-- <div style="margin: 5px;"><a href="StaffRegForm.php"><button type="button">Add Staff</button></a></div> -->
+
                          </td>
                         <td width="600">
                             <table border="1" bordercolor="Green" align="right">
-	                            <TR><TD COLSPAN="3" style="background-color: #FF0000; color: #FFFFFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;" class="auto-style4"><u>ACTIVE APPLICATION:</u></TD></TR>
-	                            <TR><TH>FILE ID</TH><TH>DESCRIPTION</TH><TH>Action</TH></TR>
-	                            <TR><TD width="200" >#</TD><TD width="400" >#</TD><TD width="150"><a href="#"><button>K</button></a></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%>sd</TD><TD HIGHT=100% WIDTH=100%>we</TD><TD HIGHT=100% WIDTH=100%><a href="#"><button type="button">K</button></a></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%>we</TD><TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%><a href="#"><button>K</button type="button"></a></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%>we</TD><TD HIGHT=100% WIDTH=100% ></TD><TD HIGHT=100% WIDTH=100% ><a href="#"><button>K</button type="button"></a></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%</TD>sd<TD HIGHT=100% WIDTH=100%>we</TD><TD HIGHT=100% WIDTH=100%><a href="#"><button>K</button type="button"></a></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%</TD>sd<TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%><a href="#"><button>K</button type="button"></a></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%</TD>we<TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%><a href="#"><button>K</button type="button"></a></TD></TR>
-	                            <TR><TD HIGHT=100% WIDTH=25%</TD>we<TD HIGHT=100% WIDTH=100%></TD><TD HIGHT=100% WIDTH=100%><a href="#"><button>K</button type="button"></a></TD></TR>
+	                            <TR><TD COLSPAN="3" style="background-color: #FF0000; color: #FFFFFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;" class="auto-style4"><u>Queries:</u></TD></TR>
+	                            <TR><TH>File ID</TH><TH>Summary</TH><TH>Action</TH></TR>
+                              <?php
+                                if (mysqli_num_rows($filesAvailable) == 0){
+                                  echo "<TR><TD width=200 colspan=3 >No files available</TD></TR>";
+                                } 
+                                else{
+                                  while ($row = mysqli_fetch_assoc($filesAvailable)){
+                                    $filedetails = "SELECT FIleID, FileStatus, Remarks FROM fileprogress WHERE FileID = $row[FileID]";
+                                    $runquery = mysqli_query($conn, $query);
+                                    $filesdata = mysqli_fetch_assoc($runquery);
+                                    print_r($runquery);
+                                    echo "<TR><TD width=200>$filesdata[FileID]</TD><TD width=400>$filesdata[FileStatus] $filesdata[Remarks]</TD><TD width=150>View</TD></TR>";
+                                  }
+                                }
+	                            
+                              ?>
 	                        </table>
                        
                         </td>

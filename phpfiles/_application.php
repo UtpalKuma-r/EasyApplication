@@ -67,7 +67,7 @@
                     $query = "INSERT INTO filestaffrel VALUE('$fileID', '$staffUsername')";
                     $result = mysqli_query($conn, $query);
 
-                    $query = "UPDATE STAFFDATA SET currentfiles = currentfiles+1 and totalfiles = totalfiles+1 where username = '$staffUsername';"
+                    $query = "UPDATE STAFFDATA SET currentfiles = currentfiles+1 and totalfiles = totalfiles+1 where username = '$staffUsername'";
                     $result = mysqli_query($conn, $query);
 
 
