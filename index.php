@@ -57,17 +57,21 @@ include "phpfiles/_home.php";
                 </li>
                 <?php
                 if ($loggedIN){
-                  if ($_SESSION["role"] = "user"){
+                  if ($_SESSION["role"] == "user"){
                     echo "<li class='dropdown primary'>
                     <a href='UserDash.php'><i class='icon-star icon-white'></i> Dashboard</a>
                     </li>";
                   }
-                  elseif ($_SESSION["role"] = "staff"){
+                  elseif ($_SESSION["role"] == "staff"){
                     echo "<li class='dropdown primary'>
                     <a href='StaffDash.php'><i class='icon-star icon-white'></i> Dashboard</a>
                     </li>";
                   }
-
+                  elseif ($_SESSION["role"] == "admin"){
+                    echo "<li class='dropdown primary'>
+                    <a href='Admin.php'><i class='icon-star icon-white'></i> Dashboard</a>
+                    </li>";
+                  }
                 echo '<li class="dropdown info active">
                 <a href="phpfiles/_logout.php"><i class="icon-bullhorn icon-white"></i> Logout</a>
               </li>';}
@@ -99,7 +103,7 @@ include "phpfiles/_home.php";
       <div class="container">
         <div class="row">
           <div class="span8">
-            <h3><i class="m-icon-big-swapright m-icon-white"></i><h1><b>About us</b> </h1> </h3>
+            <!-- <h3><i class="m-icon-big-swapright m-icon-white"></i><h1><b>About us</b> </h1> </h3> -->
             <p><h1>One Stop For All Your Application</h1> </p>
           </div>
             <p></p>

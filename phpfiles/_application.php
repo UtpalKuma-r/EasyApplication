@@ -60,6 +60,17 @@
                     $query = "INSERT INTO filedata VALUES('$fileID', '$firstname', '$lastname', '$gender', '$dob', '$fathername', '$mothername', '$phonenumber', '$email', '$state', '$district', '$subdiv', '$address', '$pincode', '$imagedestination', '$signaturedestination')";
                     $result = mysqli_query($conn, $query);
 
+                    $query = "SELECT UserName, MIN(CURRENTFILES) FROM STAFFDATA where role = 'staff'";
+                    $result = mysqli_query($conn, $query);
+                    $staffUsername = mysqli_fetch_assoc($result)["UserName"];
+
+                    $query = "INSERT INTO filestaffrel VALUE('$fileID', '$staffUsername')";
+                    $result = mysqli_query($conn, $query);
+
+                    $query = "UPDATE STAFFDATA SET currentfiles = currentfiles+1 and totalfiles = totalfiles+1 where username = '$staffUsername';"
+                    $result = mysqli_query($conn, $query);
+
+
                     echo "<script>if(confirm('Your application has been submitted.')){document.location.href='UserDash.php'};</script>";
 
                 }

@@ -50,7 +50,12 @@
                 echo "<script>document.location.href='UserDash.php';</script>";
             }
             elseif($loginpass[1] == "staff"){
-                echo "<script>if(confirm('Login Successfull!!')){document.location.href='StaffDash.php'};</script>";
+                $_SESSION["role"] = "staff";
+                echo "<script>document.location.href='StaffDash.php';</script>";
+            }
+            elseif($loginpass[1] == "admin"){
+                $_SESSION["role"] = "admin";
+                echo "<script>document.location.href='Admin.php';</script>";
             }
         }
 

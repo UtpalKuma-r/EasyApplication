@@ -19,11 +19,11 @@
   <link href="assets/color/success.css" rel="stylesheet">
 
   <!-- fav and touch icons -->
-  <!-- <link rel="shortcut icon" href="assets/ico/favicon.ico">
+  <link rel="shortcut icon" href="assets/ico/favicon.ico">
   <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
   <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"> -->
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 
     <style type="text/css">
         .auto-style2 {
@@ -36,8 +36,7 @@
     </style>
 </head>
 <?php
-  include "phpfiles/_dashboard.php";
-  
+include "phpfiles/_admin.php";
 ?>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
@@ -56,14 +55,14 @@
                 <li class="dropdown success">
                   <a href="index.php"><i class="icon-home icon-white"></i> Home</a>
                 </li>
-                <li class="dropdown primary">
-                  <a href="UserDash.php"><i class="icon-star icon-white"></i> Dashboard</a>
-                </li>
-                <li class="dropdown info active">
+                    <li class='dropdown primary'>
+                    <a href='Admin.php'><i class='icon-star icon-white'></i> Dashboard</a>
+                    </li>
+                    <li class="dropdown info active">
                   <a href="phpfiles/_logout.php"><i class="icon-bullhorn icon-white"></i> Logout</a>
                 </li>
                 <li class="inverse">
-                  <a href="Contact.php"><i class="icon-envelope icon-white"></i> Contact</a>
+                  <a href="Contact.html"><i class="icon-envelope icon-white"></i> Contact</a>
                 </li>
               </ul>
             </nav>
@@ -73,16 +72,12 @@
       </div>
     </div>
   </header>
-
-
-  <!-- Subhead
-================================================== -->
-  <section id="subintro">
-    <div class="jumbotron subhead" id="overview" style="margin:0;">
+ <section id="subintro">
+    <div class="jumbotron subhead" id="overview">
       <div class="container">
         <div class="row">
           <div class="span8">
-            <h3 style="font-size: xx-large; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"><u>User Dashboard:</u></h3>
+            <h3 style="font-size: xx-large; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Admin Dashboard:</h3>
             <p>&nbsp;</p>
           </div>
         </div>
@@ -92,8 +87,8 @@
 
   <section id="maincontent">
     <div class="container">
-
-                <table align="center">
+        
+    <table align="center">
                     <tr>
                     <td width="400" style="border: solid;">
                     <div style="margin: 5px; border-bottom:solid 2px red;">
@@ -109,20 +104,20 @@
                     </ul>
                     </h5>
                   </div>
-                    <div style="margin: 5px;"><a href="AppForm.php"><button type="button">New Application</button></a></div>
+                    <div style="margin: 5px;"><a href="StaffRegForm.php"><button type="button">Add Staff</button></a></div>
 
                          </td>
                         <td width="600">
                             <table border="1" bordercolor="Green" align="right">
-	                            <TR><TD COLSPAN="3" style="background-color: #FF0000; color: #FFFFFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;" class="auto-style4"><u>ACTIVE APPLICATION:</u></TD></TR>
-	                            <TR><TH>FILE ID</TH><TH>DESCRIPTION</TH><TH>Status</TH></TR>
+	                            <TR><TD COLSPAN="3" style="background-color: #FF0000; color: #FFFFFF; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: large; font-weight: bold;" class="auto-style4"><u>Queries:</u></TD></TR>
+	                            <TR><TH>Request ID</TH><TH>Summary</TH><TH>Action</TH></TR>
                               <?php
                                 if (mysqli_num_rows($filesAvailable) == 0){
-                                  echo "<TR><TD width=200 colspan=3 >No files available</TD></TR>";
+                                  echo "<TR><TD width=200 colspan=3 >No Queries available</TD></TR>";
                                 } 
                                 else{
                                   while ($row = mysqli_fetch_assoc($filesAvailable)){
-                                    echo "<TR><TD width=200>$row[FileID]</TD><TD width=400>$row[Department] $row[Remarks]</TD><TD width=150>$row[FileStatus]</TD></TR>";
+                                    echo "<TR><TD width=200>$row[RequestID]</TD><TD width=400>$row[Summary]</TD><TD width=150>Reply</TD></TR>";
                                   }
                                 }
 	                            
@@ -133,8 +128,9 @@
                     </tr>
                 </table> 
     </div>
+    </div>
   </section>
-  <footer class="footer">
+<footer class="footer">
     <div class="container">
       <div class="row">
         <div class="span4">
@@ -210,9 +206,13 @@
   <script src="assets/js/flexslider/jquery.flexslider.js"></script>
   <script src="assets/js/flexslider/setting.js"></script>
   <script src="assets/js/application.js"></script>
+
+  <!-- Template Custom JavaScript File -->
   <script src="assets/js/custom.js"></script>
 
 
 </body>
 
 </html>
+
+

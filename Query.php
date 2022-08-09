@@ -36,7 +36,7 @@
     </style>
 </head>
 <?php
-  include "phpfiles/_contact.php";
+include "phpfiles/_query.php";
 ?>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
@@ -53,7 +53,7 @@
             <nav>
               <ul class="nav topnav">
                 <li class="dropdown success">
-                  <a href="index.php"><i class="icon-home icon-white"></i> Home</a>
+                  <a href="Default(Home).html"><i class="icon-home icon-white"></i> Home</a>
                 </li>
                 <?php
                 if ($loggedIN){
@@ -86,7 +86,7 @@
                 }
                 ?>
                 <li class="inverse">
-                  <a href="Contact.php"><i class="icon-envelope icon-white"></i> Contact</a>
+                  <a href="Contact.html"><i class="icon-envelope icon-white"></i> Contact</a>
                 </li>
               </ul>
             </nav>
@@ -96,16 +96,12 @@
       </div>
     </div>
   </header>
-
-
-  <!-- Subhead
-================================================== -->
-  <section id="subintro">
+<section id="subintro">
     <div class="jumbotron subhead" id="overview">
       <div class="container">
         <div class="row">
           <div class="span8">
-            <h3 style="font-size: xx-large; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">CONTACT & FEEDBACK:</h3>
+            <h3 style="font-size: xx-large; font-weight: bold; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">Query Box:</h3>
             <p>&nbsp;</p>
           </div>
         </div>
@@ -115,83 +111,17 @@
 
   <section id="maincontent">
     <div class="container">
-      <form method="post">
-        <?php
-        if ($loggedIN){
-          echo '
-          <table align="center">
-          <tr>
-          <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Subject:</td><td class="auto-style1"><input type="text" required style="width: 500px" name="summary", id="summary"></td>
-        </tr>
-        <tr>
-          <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Matter:</td>
-          <td class="auto-style1"><textarea name="details" id="details" cols="30" rows="10" required style="width: 500px"></textarea></td>
-        </tr>
-        <tr>
-          <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Attahment:</td>
-          <td class="auto-style1"><input type="file" style="width: 508px"submit"></td> 
-          <td class="auto-style1">&nbsp;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td class="auto-style1"> <button type="reset" style="background-color: #FF0000; font-size: large; font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; width: 100px; color: #FFFFFF;">Reset</button>
-
-
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          
-          <button type="submit" style="background-color: #FFFF00; font-size: large; font-family: "Gill Sans", "Gill Sans MT", Calibri,"Trebuchet MS", sans-serif; width: 102px;">Submit</button></td> 
-          <td class="auto-style1">&nbsp;</td>
-        </tr>
-          </table>';
-        }
-        else{
-          echo'
-          
-        <table align="center">
-                    <tr>
-                      <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif" width="150">Name:</td>
-                      <td class="auto-style1"><input type="text" required style="width: 500px" name="name" id="name"></td>
-                    </tr>
-                    <tr>
-                      <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Email:</td>
-                      <td class="auto-style1"><input type="email" required style="width: 500px" name="email" id="email"></td>
-                    </tr>
-                    <tr>
-                      <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Contact No:</td><td class="auto-style1"><input type="number" required style="width: 500px" name="phonenumber" id="phonenumber"></td>
-                    </tr>
-                    <tr>
-                      <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Subject:</td><td class="auto-style1"><input type="text" required style="width: 500px" name="summary", id="summary"></td>
-                    </tr>
-                    <tr>
-                      <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Matter:</td>
-                      <td class="auto-style1"><textarea name="details" id="details" cols="30" rows="10" required style="width: 500px"></textarea></td>
-                    </tr>
-                    <tr>
-                      <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Attahment:</td>
-                      <td class="auto-style1"><input type="file" style="width: 508px"submit"></td> 
-                      <td class="auto-style1">&nbsp;</td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td class="auto-style1"> <button type="reset" style="background-color: #FF0000; font-size: large; font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; width: 100px; color: #FFFFFF;">Reset</button>
-
-
-                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                      
-                      <button type="submit" style="background-color: #FFFF00; font-size: large; font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; width: 102px;">Submit</button></td> 
-                      <td class="auto-style1">&nbsp;</td>
-                    </tr>
-        </table> 
-          ';
-        }
-        ?>
-      </form>
-
+        <table align="center" border="1" frame="BOX" rules="NONE">
+            <tr><td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" width="120">Request ID:</td><td>#Import#</td></tr>
+            <tr><td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Summary:</td><td></td></tr>
+            <tr><td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Query:</td><td><textarea id="Contactinfor" cols="30" name="reasonToContact" required="" rows="10" style="width: 500px"></textarea></td></tr>
+            <tr><td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Reply:</td><td><textarea id="Textarea1" cols="30" name="reasonToContact" required="" rows="10" style="width: 500px"></textarea></td></tr>
+            <tr><td></td></tr>
+            <tr><td><button type="submit" style="background-color: #FFFF00; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 102px;">Send</button></TD><TD><INPUT TYPE="RESET"  VALUE="Reset" style="background-color: #FF0000; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 100px; color: #FFFFFF;" ></TD></tr>
+        </table>
     </div>
   </section>
-  <!-- Footer
- ================================================== -->
- <footer class="footer">
+<footer class="footer">
     <div class="container">
       <div class="row">
         <div class="span4">
@@ -270,10 +200,5 @@
 
   <!-- Template Custom JavaScript File -->
   <script src="assets/js/custom.js"></script>
-
-
 </body>
-
 </html>
-
-

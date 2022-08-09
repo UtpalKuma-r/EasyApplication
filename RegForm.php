@@ -94,11 +94,11 @@
         <TABLE ALIGN="CENTER">
           <TR>
             <TD colspan="3" ><H3>Create Your Account.It Will Take Only Few Minutes..</H3></TD>
-            
           </tr>
           <TR>
             <TD >User Name:</TD>
             <TD ><INPUT TYPE="TEXT" NAME="uname" required> </TD>
+            <TD ></TD>
           </tr>
           <TR>
             <TD >Name:</TD>
@@ -108,12 +108,12 @@
           <TR>
             <TD >DOB:</TD>
             <TD colspan="2"><INPUT TYPE="date"  NAME="dob" required></TD>
-            
+
           </tr>
           <TR>
             <TD >Mobile No.:</TD>
             <TD colspan="2"><INPUT TYPE="tel" NAME="phonenumber" required></TD>
-            
+
           </tr>
           <TR>
             <TD >Email:</TD>
