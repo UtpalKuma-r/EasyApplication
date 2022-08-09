@@ -57,7 +57,7 @@
                   <a href="index.php"><i class="icon-home icon-white"></i> Home</a>
                 </li>
                 <li class="dropdown primary">
-                  <a href="RegForm.php"><i class="icon-star icon-white"></i> Register</a>
+                  <a href="UserDash.php"><i class="icon-star icon-white"></i> Dashboard</a>
                 </li>
                 <li class="dropdown info active">
                   <a href="phpfiles/_logout.php"><i class="icon-bullhorn icon-white"></i> Logout</a>

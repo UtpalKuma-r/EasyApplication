@@ -35,7 +35,9 @@
         }
     </style>
 </head>
-
+<?php
+  include "phpfiles/_contact.php";
+?>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
   <header>
@@ -53,12 +55,31 @@
                 <li class="dropdown success">
                   <a href="index.php"><i class="icon-home icon-white"></i> Home</a>
                 </li>
-                <li class="dropdown primary">
+                <?php
+                if ($loggedIN){
+                  if ($_SESSION["role"] = "user"){
+                    echo "<li class='dropdown primary'>
+                    <a href='UserDash.php'><i class='icon-star icon-white'></i> Dashboard</a>
+                    </li>";
+                  }
+                  elseif ($_SESSION["role"] = "staff"){
+                    echo "<li class='dropdown primary'>
+                    <a href='StaffDash.php'><i class='icon-star icon-white'></i> Dashboard</a>
+                    </li>";
+                  }
+
+                echo '<li class="dropdown info active">
+                <a href="phpfiles/_logout.php"><i class="icon-bullhorn icon-white"></i> Logout</a>
+              </li>';}
+                else{
+                  echo '<li class="dropdown primary">
                   <a href="RegForm.php"><i class="icon-star icon-white"></i> Register</a>
                 </li>
                 <li class="dropdown info active">
                   <a href="LoginPage.php"><i class="icon-bullhorn icon-white"></i> Login</a>
-                </li>
+                </li>';
+                }
+                ?>
                 <li class="inverse">
                   <a href="Contact.php"><i class="icon-envelope icon-white"></i> Contact</a>
                 </li>
@@ -90,41 +111,75 @@
   <section id="maincontent">
     <div class="container">
       <form method="post">
+        <?php
+        if ($loggedIN){
+          echo '
+          <table align="center">
+          <tr>
+          <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Subject:</td><td class="auto-style1"><input type="text" required style="width: 500px" name="summary", id="summary"></td>
+        </tr>
+        <tr>
+          <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Matter:</td>
+          <td class="auto-style1"><textarea name="details" id="details" cols="30" rows="10" required style="width: 500px"></textarea></td>
+        </tr>
+        <tr>
+          <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Attahment:</td>
+          <td class="auto-style1"><input type="file" style="width: 508px"submit"></td> 
+          <td class="auto-style1">&nbsp;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="auto-style1"> <button type="reset" style="background-color: #FF0000; font-size: large; font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; width: 100px; color: #FFFFFF;">Reset</button>
+
+
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          
+          <button type="submit" style="background-color: #FFFF00; font-size: large; font-family: "Gill Sans", "Gill Sans MT", Calibri,"Trebuchet MS", sans-serif; width: 102px;">Submit</button></td> 
+          <td class="auto-style1">&nbsp;</td>
+        </tr>
+          </table>';
+        }
+        else{
+          echo'
+          
         <table align="center">
                     <tr>
-                      <td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" width="150">Name:</td>
+                      <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif" width="150">Name:</td>
                       <td class="auto-style1"><input type="text" required style="width: 500px" name="name" id="name"></td>
                     </tr>
                     <tr>
-                      <td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Email:</td>
+                      <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Email:</td>
                       <td class="auto-style1"><input type="email" required style="width: 500px" name="email" id="email"></td>
                     </tr>
                     <tr>
-                      <td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Contact No:</td><td class="auto-style1"><input type="number" required style="width: 500px" name="phonenumber" id="phonenumber"></td>
+                      <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Contact No:</td><td class="auto-style1"><input type="number" required style="width: 500px" name="phonenumber" id="phonenumber"></td>
                     </tr>
                     <tr>
-                      <td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Subject:</td><td class="auto-style1"><input type="text" required style="width: 500px" name="summary", id="summary"></td>
+                      <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Subject:</td><td class="auto-style1"><input type="text" required style="width: 500px" name="summary", id="summary"></td>
                     </tr>
                     <tr>
-                      <td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Matter:</td>
+                      <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Matter:</td>
                       <td class="auto-style1"><textarea name="details" id="details" cols="30" rows="10" required style="width: 500px"></textarea></td>
                     </tr>
                     <tr>
-                      <td style="font-size: medium; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">Attahment:</td>
+                      <td style="font-size: medium; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif">Attahment:</td>
                       <td class="auto-style1"><input type="file" style="width: 508px"submit"></td> 
                       <td class="auto-style1">&nbsp;</td>
                     </tr>
                     <tr>
                       <td></td>
-                      <td class="auto-style1"> <button type="reset" style="background-color: #FF0000; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 100px; color: #FFFFFF;">Reset</button>
+                      <td class="auto-style1"> <button type="reset" style="background-color: #FF0000; font-size: large; font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; width: 100px; color: #FFFFFF;">Reset</button>
 
 
                       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                       
-                      <button type="submit" style="background-color: #FFFF00; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 102px;">Submit</button></td> 
+                      <button type="submit" style="background-color: #FFFF00; font-size: large; font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif; width: 102px;">Submit</button></td> 
                       <td class="auto-style1">&nbsp;</td>
                     </tr>
         </table> 
+          ';
+        }
+        ?>
       </form>
 
     </div>
@@ -216,6 +271,4 @@
 
 </html>
 
-<?php
-  require_once "phpfiles/_contact.php";
-?>
+

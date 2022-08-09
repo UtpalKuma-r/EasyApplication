@@ -2,6 +2,12 @@
 
     include "_connection.php";
 
+    session_start();
+    $loggedIN = FALSE;
+    if (isset($_SESSION["username"])){
+        $loggedIN = TRUE;
+    }
+
     if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
         $name = $_POST["name"];
