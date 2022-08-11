@@ -118,11 +118,16 @@ include "phpfiles/_staff.php";
                                 } 
                                 else{
                                   while ($row = mysqli_fetch_assoc($filesAvailable)){
-                                    $filedetails = "SELECT FIleID, FileStatus, Remarks FROM fileprogress WHERE FileID = $row[FileID]";
-                                    $runquery = mysqli_query($conn, $query);
-                                    $filesdata = mysqli_fetch_assoc($runquery);
-                                    print_r($runquery);
-                                    echo "<TR><TD width=200>$filesdata[FileID]</TD><TD width=400>$filesdata[FileStatus] $filesdata[Remarks]</TD><TD width=150>View</TD></TR>";
+                                    $filedetails = "SELECT FileID, FileStatus, Remarks FROM fileprogress where FileID = '$row[FileID]'";
+                                    mysqli_select_db($conn, "easyapplication");
+                                    $runquery = mysqli_query($conn, $filedetails);
+                                    while ($filesdata = mysqli_fetch_assoc($runquery)){
+                                      // print_r($filesdata);
+                                      echo "<TR><TD width=200>$filesdata[FileID]</TD><TD width=400>$filesdata[FileStatus] $filesdata[Remarks]</TD><TD width=150><a href='Hold.php?fileid=$filesdata[FileID]'>View</a></TD></TR>";
+                                    }
+                                    
+                                    
+                                    
                                   }
                                 }
 	                            

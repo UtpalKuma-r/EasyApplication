@@ -53,7 +53,7 @@
                     // $result = mysqli_query($conn, $query);
 
                     // mysqli_select_db($conn, "usertables");
-                    $query = "INSERT INTO fileprogress(FileID, UserName, Department, FileStatus) VALUES('$fileID', '$username', 'aadhar', 'submitted')";
+                    $query = "INSERT INTO fileprogress(FileID, UserName, Department, FileStatus) VALUES('$fileID', '$username', 'Aadhar', 'submitted')";
                     $result = mysqli_query($conn, $query);
 
                     mysqli_select_db($conn, "aadhar");

@@ -117,7 +117,9 @@ include "phpfiles/_admin.php";
                                 } 
                                 else{
                                   while ($row = mysqli_fetch_assoc($filesAvailable)){
-                                    echo "<TR><TD width=200>$row[RequestID]</TD><TD width=400>$row[Summary]</TD><TD width=150>Reply</TD></TR>";
+                                    echo "<TR><TD width=200>$row[RequestID]</TD>
+                                              <TD width=400>$row[Summary]</TD>
+                                              <TD width=150><a href = 'mailto: $row[Email]'>Send Email</a></TD></TR>";
                                   }
                                 }
 	                            

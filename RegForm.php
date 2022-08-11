@@ -122,7 +122,7 @@
           </tr>
           <TR>
             <TD>Img. Upload:</TD>
-            <TD WIDTH="600"><INPUT TYPE="file" NAME="image" required></TD>
+            <TD><INPUT TYPE="file" NAME="image" required></TD>
             <!-- <TD WIDTH="100"></TD> -->
           </tr>
           <TR>
@@ -137,7 +137,7 @@
           </tr>
                 <tr>
                     <td><INPUT TYPE="Submit" VALUE="SUBMIT" style="background-color: #FFFF00; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 102px;" ></td>
-                    <td><INPUT TYPE="RESET" style="background-color: #FF0000; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 100px; color: #FFFFFF;"RESET"></td>
+                    <td><INPUT TYPE="RESET" style="background-color: #FF0000; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 100px; color: #FFFFFF;">RESET</td>
                 </tr>     
         </TABLE>
 	    </FORM>

@@ -35,7 +35,7 @@
     </style>
 </head>
 <?php
-include "phpfiles/_fileview.php";
+include "phpfiles/_hold.php";
 ?>
 <body data-spy="scroll" data-target=".bs-docs-sidebar">
 
@@ -52,35 +52,16 @@ include "phpfiles/_fileview.php";
             <nav>
               <ul class="nav topnav">
                 <li class="dropdown success">
-                  <a href="Default(Home).html"><i class="icon-home icon-white"></i> Home</a>
+                  <a href="inced.php"><i class="icon-home icon-white"></i> Home</a>
                 </li>
-                <?php
-                if ($loggedIN){
-                  if ($_SESSION["role"] = "user"){
-                    echo "<li class='dropdown primary'>
-                    <a href='UserDash.php'><i class='icon-star icon-white'></i> Dashboard</a>
-                    </li>";
-                  }
-                  elseif ($_SESSION["role"] = "staff"){
-                    echo "<li class='dropdown primary'>
-                    <a href='StaffDash.php'><i class='icon-star icon-white'></i> Dashboard</a>
-                    </li>";
-                  }
-
-                echo '<li class="dropdown info active">
-                <a href="phpfiles/_logout.php"><i class="icon-bullhorn icon-white"></i> Logout</a>
-              </li>';}
-                else{
-                  echo '<li class="dropdown primary">
-                  <a href="RegForm.php"><i class="icon-star icon-white"></i> Register</a>
+                <li class="dropdown primary">
+                  <a href="StaffDash.php"><i class="icon-star icon-white"></i> Dashboard</a>
                 </li>
                 <li class="dropdown info active">
-                  <a href="LoginPage.php"><i class="icon-bullhorn icon-white"></i> Login</a>
-                </li>';
-                }
-                ?>
+                  <a href="phpfiles/_logout.php"><i class="icon-bullhorn icon-white"></i> Logout</a>
+                </li>
                 <li class="inverse">
-                  <a href="Contact.html"><i class="icon-envelope icon-white"></i> Contact</a>
+                  <a href="Contact.php"><i class="icon-envelope icon-white"></i> Contact</a>
                 </li>
               </ul>
             </nav>
@@ -103,20 +84,96 @@ include "phpfiles/_fileview.php";
     </div>
   </section>
 
-  <section id="maincontent">
+ <section id="maincontent">
     <div class="container">
-        <div> CHACHA LO YEHA PE LIKHO..</div>
-        <div>
-            <table align="right"  border="1" frame="BOX" rules="NONE">
-                <tr><td><button type="button" style="background-color: #00FF00; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 102px;" value="submit">Accept</button></td></tr>
-                <tr><td><button type="button" style="background-color: #FFFF00; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 100px; color: #000000;" value="button">Hold</button></td></tr>
-                <tr><td><button type="button" style="background-color: #FF0000; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 100px; color: #000000;" value="button">Reject</button></td></tr>
-                <tr><td class="auto-style1"><textarea name="publicnote" id="Contactinfor" height="100">Public Note</textarea></td></tr>
-                <tr><td class="auto-style1"><textarea name="departmentnote" id="Textarea1" height="100">Department Note</textarea></td></tr>
-                <tr><td class="auto-style3"><button align="center" type="button" style="background-color: #0000FF; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 100px; color: #FFFFFF;" value="submit">Save</button></td></tr>
-            </table>
-        </div>
-    </div>
+      <table align="left" style="border: solid; border-colour:red; border-width:5px; padding:10px;">
+        <TR>
+				  <TD WIDTH="200">Name:</TD>
+				  <TD WIDTH="200"><?php echo $row[1]?></TD>
+				  <TD WIDTH="200" rowspan="3"><img src="<?php echo $row[14]?>" alt="" srcset=""></TD>
+			  </tr>
+        <TR>
+          <TD WIDTH="200">Surname:</TD>
+          <TD WIDTH="200"><?php echo $row[2]?></TD>
+        </tr>
+        <TR>
+          <TD>Gender:</TD>
+          <TD><?php echo $row[3]?></TD>
+			  </tr>
+        <TR>
+          <TD WIDTH="200">DOB:</TD>
+          <TD WIDTH="200"><?php echo $row[4]?></TD>
+          <TD WIDTH="100"><img src="<?php echo $row[15]?>" alt="" srcset=""></TD>
+			  </tr>
+			  <TR>
+          <TD WIDTH="200">Father's Name:</TD>
+          <TD WIDTH="200"><?php echo $row[5]?></TD>
+          <TD WIDTH="100"></TD>
+        </tr>
+        <TR>
+          <TD WIDTH="200">Mother's Name:</TD>
+          <TD WIDTH="200"><?php echo $row[6]?></TD>
+          <TD WIDTH="100"></TD>
+			  </tr>
+        <TR>
+          <TD WIDTH="200">Mobile No.:</TD>
+          <TD WIDTH="200"><?php echo $row[7]?></TD>
+          <TD WIDTH="100"></TD>
+        </tr>
+        <TR>
+          <TD WIDTH="200">Email:</TD>
+          <TD WIDTH="200"><?php echo $row[8]?></TD>
+          <TD WIDTH="100"></TD>
+        </tr>
+        <TR>
+          <TD WIDTH="200">State:</TD>
+          <TD WIDTH="200"><?php echo $row[9]?></TD>
+          <TD WIDTH="100"></TD>
+        </tr>
+        <TR>
+          <TD WIDTH="200">District:</TD>
+          <TD WIDTH="200"><?php echo $row[10]?></TD>
+          <TD WIDTH="100"></TD>
+        </tr>
+        <TR>
+          <TD WIDTH="200">Sub-Division:</TD>
+          <TD WIDTH="200"><?php echo $row[11]?></TD>
+          <TD WIDTH="100"></TD>
+        </tr>
+        <TR>
+          <TD WIDTH="200">Address:</TD>
+          <TD WIDTH="200"><?php echo $row[12]?></TD>
+          <TD WIDTH="100"></TD>
+        </tr>
+        <TR>
+          <TD WIDTH="200">Pincode:</TD>
+          <TD WIDTH="200"><?php echo $row[13]?></TD>
+          <TD WIDTH="100"></TD>
+        </tr>
+      </table>
+<form method="POST">
+      <table align="right"  border="1" frame="BOX" rules="NONE">
+          <tr>
+          <TD style="color: black; background-color: green;"><INPUT TYPE="radio" VALUE="Accepted" NAME="status"> Accept
+          </TD>
+          </tr>
+          <tr>
+            <td style="color: black; background-color: yellow;">
+            <INPUT TYPE="radio" VALUE="Hold" NAME="status" style="color:yellow"> Hold
+            </td>
+          </tr>
+          <tr>
+            <td style="color: black; background-color: red;">
+            <INPUT TYPE="radio" VALUE="Rejected" NAME="status" style="color:red"> Reject
+            </td>
+          </tr>
+          <br>
+
+          <tr><td class="auto-style1"><textarea name="remarks" id="Textarea1" height="100">Remarks</textarea></td></tr>
+          <tr><td class="auto-style3"><INPUT TYPE="Submit" VALUE="SUBMIT" style="background-color: #0000FF; font-size: large; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; width: 102px;"></td></tr>
+      </table>
+      </form>
+     </div>
   </section>
 
 <footer class="footer">

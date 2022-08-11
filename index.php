@@ -117,12 +117,10 @@ include "phpfiles/_home.php";
     <div class="container">
         <table align="center">
             <tr>
-                <td width="200">
-                    &nbsp;<img src="assets/img/file2.png" /></td>
-                 <td width="700" style="font-size: large; font-family: Avalon;"><h2> We know in hustle of the life people are running out of time. This web page act as an interface between the government and the user. It is a platform for the user to share there problem or suggestion in simple steps anytime and from anywhere and they will be updated for the same regularly.</h2>
-                
-
+            <td width="700" style="font-size: large; font-family: Avalon;"><h2> We know in hustle of the life people are running out of time. This web page act as an interface between the government and the user. It is a platform for the user to share there problem or suggestion in simple steps anytime and from anywhere and they will be updated for the same regularly.</h2>
                 </td>
+                <td width="500">
+                    &nbsp;<img src="assets/img/file2.png" /></td>
             </tr>
        </table>
 

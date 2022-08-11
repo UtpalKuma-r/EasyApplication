@@ -27,6 +27,8 @@ if (isset($_SESSION["username"])){
     }
 
     else{
+        session_unset();
+        session_destroy();
         echo "<script>if(confirm('You are not autherised to access this page.')){document.location.href='LoginPage.php'};</script>";
     }
 
